@@ -1,4 +1,4 @@
-# Travers Smith — prototype requirements (V1.1)
+# Travers Smith — prototype requirements (V2)
 
 Source: ClerksWell phase 1 review of traverssmith.com and four competitor sites (29 Sep 2026).
 Idea numbers (#nn) refer to the Opportunities page. These are ClerksWell proposals, not client
@@ -66,3 +66,4 @@ Area are out of scope (separate projects).
 - V1.1 (29 Sep 2026), from Leo's review:
   1. Clicking a person jumped to the top of the page. Every named lawyer now opens a profile, using shortened content from their traverssmith.com profile (R23).
   2. Event cards for on-demand and past events went nowhere. Every event now has a page, and the listing carries eleven real past events from 2024 to 2026 (R56).
+- V2 (29 Sep 2026): Travers Smith design layer added in `theme.css` from the phase 1 design system; portraits and illustrations from traverssmith.com via `photos.js`. No structural changes.

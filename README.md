@@ -1,8 +1,15 @@
-# Travers Smith — website improvement prototypes (V1.1)
+# Travers Smith — website improvement prototypes (V2)
 
-Six clickable greyscale prototypes for improvements to traverssmith.com, prepared by ClerksWell
-following the phase 1 review (29 September 2026). This round is about structure and behaviour;
-the Travers Smith design layer will be added in `src/css/theme.css` in the next round.
+Six clickable prototypes for improvements to traverssmith.com, prepared by ClerksWell following the
+phase 1 review (29 September 2026). The Travers Smith design layer (colour blocks, type, pill buttons,
+square cards, black header and footer) lives entirely in `src/css/theme.css`; empty that file to get
+the greyscale prototypes back.
+
+Portraits and illustrations are the firm's own, loaded directly from traverssmith.com by
+`src/js/photos.js` (which `wireframe.js` loads automatically). Where an image can't load, a
+brand-colour placeholder shows instead. Photography and illustrations © Travers Smith LLP; the
+repository and Pages site are public, so treat them accordingly. Cera Pro is licensed, so Outfit
+(Google Fonts) stands in for it until we have the firm's font files.
 
 Site search, navigation and the Client Area are covered by separate projects and are left out.
 
@@ -39,5 +46,5 @@ navigator (top bar with the Notes switch), the follow dialog and the previous/ne
 `src/includes/`.
 
 ## Status
-V1, greyscale prototypes for internal review. Notes are off by default; switch "Notes on" in the
+V2, designed prototypes for internal review. Notes are off by default; switch "Notes on" in the
 top bar to show what each prototype proposes and why, plus in-page annotations.

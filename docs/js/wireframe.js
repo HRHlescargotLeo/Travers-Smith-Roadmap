@@ -938,6 +938,18 @@
     }
   }
 
+  /* Load the design layer's imagery (photos.js) from the same folder as this
+     script, so pages don't each need another script tag. Removing photos.js
+     leaves the brand-colour placeholders. */
+  (function () {
+    var me = document.currentScript;
+    if (!me || !me.src) return;
+    var s = document.createElement('script');
+    s.src = me.src.replace(/wireframe\.js(\?.*)?$/, 'photos.js');
+    s.async = false;
+    document.head.appendChild(s);
+  })();
+
   document.addEventListener('DOMContentLoaded', function () {
     initProfile();
     initEventPage();
