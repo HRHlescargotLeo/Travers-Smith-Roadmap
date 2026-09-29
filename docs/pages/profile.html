@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emma Havas | Travers Smith prototype</title>
+  <title>Profile | Travers Smith prototype</title>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/theme.css">
@@ -36,130 +36,94 @@
   <main id="main" class="flush">
     <aside class="proposal" aria-label="About this prototype">
       <div class="container">
-        <p class="proposal-eyebrow">Prototype 2 of 6 · Partner profile, shown with Emma Havas</p>
+        <p class="proposal-eyebrow">Prototype 2 of 6 · Lawyer profile (opens Emma Havas by default)</p>
         <div class="proposal-grid">
-          <div><h2>What we're proposing</h2><p>A profile that shows the work as well as the biography. An at-a-glance panel beside the introduction, the selected deals as a list that can be filtered and links through to the press release where there is one, and a feed of the partner's own briefings, podcasts, events and deals, filled automatically from content where they are named.</p></div>
-          <div><h2>Why</h2><p>Emma's current profile lists 17 selected deals with no years and no links, although the most recent (the Logiq sale to IBM) has its own press release. The profile carries no articles or talks, even though briefing and event pages already name people as contacts and speakers, so the connection exists in the CMS and simply isn't shown.</p></div>
+          <div><h2>What we're proposing</h2><p>A profile that shows the work as well as the biography. An at-a-glance panel beside a short introduction, the selected deals as a list that can be filtered and links through to the press release where there is one, and a feed of the lawyer's own briefings, events and deals, filled automatically from content where they are named.</p></div>
+          <div><h2>Why</h2><p>Emma Havas's current profile lists 17 selected deals with no years and no links, although the most recent (the Logiq sale to IBM) has its own press release. Profiles carry no articles or talks, even though briefing and event pages already name people as contacts and speakers, so the connection exists in the CMS and simply isn't shown.</p></div>
         </div>
-        <p class="proposal-foot">Name, role, practices, recognition, deals and the client quote are from traverssmith.com. Items marked Sample, and bracketed fields, are placeholders. Ideas 8–10.</p>
+        <p class="proposal-foot">Every lawyer named in these prototypes opens here with their own profile, shortened from traverssmith.com. Bracketed fields are placeholders. Ideas 8–10.</p>
       </div>
     </aside>
 
-    <div class="page-hero">
-      <div class="container">
-        <div class="profile-head">
-          <span class="wf-placeholder">Portrait 4:5</span>
-          <div>
-            <p class="breadcrumb-lite">People › Emma Havas</p>
-            <h1>Emma Havas</h1>
-            <p class="lead">Partner, Private Equity &amp; Financial Sponsors. Member of the International Board.</p>
-            <div class="contact-row">
-              <span>+44 20 7295 3294</span>
-              <a class="btn btn-sm" href="#">Email Emma</a>
-              <a href="#">LinkedIn</a>
-              <button type="button" class="btn-link" data-fake-download="vCard downloaded (prototype)">Download vCard</button>
-              <button type="button" class="btn-link" data-copy-link="">Share profile</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="tabs" role="tablist" aria-label="Profile sections">
-        <button class="tab active" data-tab="p-overview" aria-selected="true">Overview</button>
-        <button class="tab" data-tab="p-deals" aria-selected="false">Selected deals (17)</button>
-        <button class="tab" data-tab="p-latest" aria-selected="false">Latest from Emma</button>
-      </div>
-      <div>
-        <!-- Overview with at-a-glance panel (R22) -->
-        <div class="tab-panel active" id="p-overview">
-          <div class="split">
+    <div id="profile">
+      <div class="page-hero">
+        <div class="container">
+          <div class="profile-head">
+            <span class="wf-placeholder">Portrait 4:5</span>
             <div>
-              <p class="lead">Emma is a corporate partner specialising in pan-European and international private equity and M&amp;A transactions.</p>
-              <p>Her clients include institutional investors, alternative asset managers, corporates, senior management teams, founders and investee companies. She advises on leveraged buyouts, consortium deals, bolt-on acquisitions, carve-outs, co-investments, minority deals, recapitalisations, divestments, distressed M&amp;A, public-to-privates, joint ventures and restructurings.</p>
-              <p>Emma also advises the firm's global asset management clients on GP-stake transactions, GP succession planning and structured secondary market liquidity, including GP-led and LP-led secondary transactions.</p>
-              <div class="wf-quote"><p>"Thank you Emma for another fantastic outcome for Access. Excellent advice throughout delivered in a professional and fun manner. Another landmark deal for Access."</p><cite>The Access Group</cite></div>
-              <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The biography is shortened to three paragraphs. Deal lists and recognition move out of the biography into their own structured fields, so they can be filtered, linked and reused elsewhere.</p>
+              <p class="breadcrumb-lite">People › <span data-pf="n"></span></p>
+              <h1 data-pf="n">Profile</h1>
+              <p class="lead" data-pf="r"></p>
+              <div class="contact-row">
+                <span data-pf="t"></span>
+                <a class="btn btn-sm" href="#" id="pf-email">Email</a>
+                <a href="#">LinkedIn</a>
+                <button type="button" class="btn-link" data-fake-download="vCard downloaded (prototype)">Download vCard</button>
+                <button type="button" class="btn-link" data-copy-link="">Share profile</button>
+              </div>
             </div>
-            <aside class="panel surface" aria-label="At a glance">
-              <h2 style="font-size:1.125rem">At a glance</h2>
-              <dl class="glance">
-                <dt>Role</dt><dd>Partner · International Board</dd>
-                <dt>Practices</dt><dd><ul><li>Private Equity &amp; Financial Sponsors</li><li>Corporate M&amp;A</li><li>Alternative Asset Management</li><li>Asset Management</li><li>Fintech</li><li>Portfolio Group</li></ul></dd>
-                <dt>Recognition</dt><dd>Notable Practitioner, private equity (IFLR1000)<br>Private Equity Rising Star (Law.com)</dd>
-                <dt>Admitted</dt><dd class="ph-text">[Jurisdiction, year]</dd>
-                <dt>Languages</dt><dd class="ph-text">[Languages]</dd>
-                <dt>Education</dt><dd class="ph-text">[University, degree]</dd>
-              </dl>
-              <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Admission, languages and education aren't on the live profiles. Would the firm want them, and who keeps them up to date? HR, BD or each lawyer?</p>
-            </aside>
           </div>
-        </div>
-
-        <!-- Selected deals, filterable and linked (R20) -->
-        <div class="tab-panel" id="p-deals">
-          <div class="chips" data-filter-group data-target="pdeals">
-            <span class="lbl">Show</span>
-            <button type="button" class="chip" data-filter="all">All</button>
-            <button type="button" class="chip" data-filter="sale">Sales and exits</button>
-            <button type="button" class="chip" data-filter="buy">Acquisitions and investments</button>
-            <span class="wf-meta" data-count-for="pdeals"></span>
-          </div>
-          <ul class="clean deal-list" id="pdeals">
-            <li data-tags="sale"><span class="d">Sep 2026</span><a href="#">Phoenix Equity Partners on the acquisition and subsequent sale of Logiq Consulting to IBM</a><span class="badge">Press release</span></li>
-            <li data-tags="sale"><span class="d">Jul 2026</span><a href="#">IK Partners on the acquisition and subsequent sale of Forthglade to Assisi Pet Care, backed by Wind Point Partners</a><span class="badge">Press release</span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>August Equity on its investment in law firm Higgs LLP</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Phoenix Equity Partners on its acquisition and subsequent sale of Ava to ICAT Logistics</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>The Access Group (backed by TA Associates, HgCapital and GIC) on over 40 bolt-on acquisitions</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Phoenix Equity Partners and management on the sale of Redington to Arthur J. Gallagher &amp; Co.</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>August Equity Partners on its investment into Fargo Systems</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>IK Partners on its takeover of Medica Group plc</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Equistone Partners Europe and management on the sale of Bulgin to Infinite Electronics</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>Graphite Capital on its acquisition of Digital Space</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>Equistone Partners Europe on its investment in Talon Outdoor</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Phoenix Equity Partners and other selling shareholders on the sale of 1000heads Group to Labelium Group</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Phoenix Equity Partners, LDC and management on the sale of Forest Holidays to Sykes Holiday Cottages</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>Equistone Partners Europe and other sellers on the sale of FirstPort to Emeria</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>TA Associates and management on their strategic reinvestment in The Access Group alongside Hg</span><span></span></li>
-            <li data-tags="buy"><span class="d ph-text">[year]</span><span>Graphite Capital on its acquisition of Babble Cloud</span><span></span></li>
-            <li data-tags="sale"><span class="d ph-text">[year]</span><span>TA Associates and management on the sale and reinvestment in ITRS Group</span><span></span></li>
-            <li class="panel surface" data-empty hidden>No deals of this type.</li>
-          </ul>
-          <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Deals become records in the CMS with a date, type and the people who worked on them. A deal then appears on every named lawyer's profile, and links to its press release where one exists. Years are shown for the two deals with a press release; the rest need adding from the firm's deal records.</p>
-        </div>
-
-        <!-- Latest from Emma (R21) -->
-        <div class="tab-panel" id="p-latest">
-          <div class="chips" data-filter-group data-target="plist">
-            <span class="lbl">Show</span>
-            <button type="button" class="chip" data-filter="all">All</button>
-            <button type="button" class="chip" data-filter="deal">Deals</button>
-            <button type="button" class="chip" data-filter="briefing">Briefings</button>
-            <button type="button" class="chip" data-filter="podcast">Podcasts</button>
-            <button type="button" class="chip" data-filter="event">Events</button>
-          </div>
-          <ul class="clean content-list" id="plist">
-            <li data-tags="deal"><span class="wf-meta">Press release · 24 Sep 2026</span><h3><a href="#">Travers Smith advises Phoenix Equity Partners, the founders and other sellers on the sale of Logiq to IBM</a></h3><p>Emma worked on this deal.</p></li>
-            <li data-tags="podcast"><span class="wf-meta">Podcast · Talking Secondaries · 18 min <span class="sample-tag">Sample</span></span><h3><a href="#">GP-led continuation funds: what buyers are asking for in 2026</a></h3><p>Emma with colleagues from the Secondaries team.</p></li>
-            <li data-tags="deal"><span class="wf-meta">Press release · 20 Jul 2026</span><h3><a href="#">Travers Smith advises IK Partners on the sale of Forthglade</a></h3><p>Emma worked on this deal.</p></li>
-            <li data-tags="briefing"><span class="wf-meta">Legal briefing · 6 min read <span class="sample-tag">Sample</span></span><h3><a href="#">GP-stake deals: five points sponsors negotiate hardest</a></h3><p>Emma is a contact on this briefing.</p></li>
-            <li data-tags="event"><span class="wf-meta">Event · Alternative Insights Summit · 18 Jun 2026</span><h3><a href="../pages/events.html">Alternative Insights Summit 2026</a></h3><p>Speaker. <span class="sample-tag">Sample</span></p></li>
-            <li class="panel surface" data-empty hidden>Nothing of this type yet.</li>
-          </ul>
-          <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Filled automatically from content where Emma is an author, contact or speaker, newest first. No extra editing for the lawyer or BD team.</p>
         </div>
       </div>
 
-      <section aria-labelledby="also" style="margin-top:2.5rem">
-        <div class="section-head"><h2 id="also">Works closely with</h2></div>
-        <div class="people-grid">
-          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Will Yates</a></h3><p class="muted">Head of Private Equity &amp; Financial Sponsors</p></div></div>
-          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">William Howard</a></h3><p class="muted">Head of International</p></div></div>
-          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Adrian West</a></h3><p class="muted">Head of Corporate M&amp;A and ECM</p></div></div>
+      <div class="container">
+        <p class="panel surface" id="pf-missing" hidden>We couldn't find that person, so this is Emma Havas's profile.</p>
+        <div class="tabs" role="tablist" aria-label="Profile sections">
+          <button class="tab active" data-tab="p-overview" aria-selected="true">Overview</button>
+          <button class="tab" data-tab="p-deals" aria-selected="false" id="pf-deals-tab">Experience</button>
+          <button class="tab" data-tab="p-latest" aria-selected="false" id="pf-latest-tab">Latest</button>
         </div>
-        <p class="wf-note query" data-note="5"><span class="wf-note-label">Open question</span>Should this list be chosen by the lawyer, or worked out from the people they share deals with?</p>
-      </section>
+        <div>
+          <!-- Overview with at-a-glance panel (R22) -->
+          <div class="tab-panel active" id="p-overview">
+            <div class="split">
+              <div>
+                <div id="pf-bio"></div>
+                <div class="wf-quote" id="pf-quote" hidden><p></p><cite></cite></div>
+                <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The biography is kept to three short paragraphs. Deals and recognition move into their own structured fields, so they can be filtered, linked and reused on service pages.</p>
+              </div>
+              <aside class="panel surface" aria-label="At a glance">
+                <h2 style="font-size:1.125rem">At a glance</h2>
+                <dl class="glance">
+                  <dt>Role</dt><dd data-pf="r"></dd>
+                  <dt>Practices</dt><dd><ul id="pf-areas"></ul></dd>
+                  <dt id="pf-rec-dt">Recognition</dt><dd id="pf-rec"></dd>
+                  <dt>Admitted</dt><dd class="ph-text">[Jurisdiction, year]</dd>
+                  <dt>Languages</dt><dd class="ph-text">[Languages]</dd>
+                  <dt>Education</dt><dd class="ph-text">[University, degree]</dd>
+                </dl>
+                <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Admission, languages and education aren't on the live profiles. Would the firm want them, and who keeps them up to date? HR, BD or each lawyer?</p>
+              </aside>
+            </div>
+          </div>
+
+          <!-- Selected deals, filterable and linked (R20) -->
+          <div class="tab-panel" id="p-deals">
+            <div class="chips" data-filter-group data-target="pdeals" id="pf-deal-chips">
+              <span class="lbl">Show</span>
+              <button type="button" class="chip" data-filter="all">All</button>
+              <button type="button" class="chip" data-filter="sale">Sales and exits</button>
+              <button type="button" class="chip" data-filter="buy">Acquisitions and investments</button>
+              <button type="button" class="chip" data-filter="other">Other</button>
+              <span class="wf-meta" data-count-for="pdeals"></span>
+            </div>
+            <ul class="clean deal-list" id="pdeals"></ul>
+            <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Deals become records with a date, type and the people who worked on them. A deal then appears on every named lawyer's profile, and links to its press release where one exists. Dates are shown only where there is a press release; the rest need adding from the firm's deal records.</p>
+          </div>
+
+          <!-- Latest (R21) -->
+          <div class="tab-panel" id="p-latest">
+            <ul class="clean content-list" id="plist"></ul>
+            <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Filled automatically from briefings, events and deals in which this lawyer is named as an author, contact or speaker, newest first. No extra editing for the lawyer or the BD team.</p>
+          </div>
+        </div>
+
+        <section aria-labelledby="also" style="margin-top:2.5rem">
+          <div class="section-head"><h2 id="also">Works in the same practice</h2></div>
+          <div class="people-grid" id="pf-colleagues"></div>
+          <p class="wf-note query" data-note="5"><span class="wf-note-label">Open question</span>Here colleagues are picked by shared practice. Should the list be chosen by the lawyer instead, or worked out from the people they share deals with?</p>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -172,6 +136,7 @@
   </footer>
 
   <script src="../js/data.js"></script>
+  <script src="../js/profiles.js"></script>
   <script src="../js/wireframe.js"></script>
 </body>
 </html>

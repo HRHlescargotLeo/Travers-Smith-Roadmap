@@ -291,6 +291,7 @@
      ====================================================================== */
 
   var PEOPLE = window.TS_PEOPLE || {};
+  var PROFILES = window.TS_PROFILES || {};
   var EVENTS = window.TS_EVENTS || [];
   var REGIONS = window.TS_REGIONS || {};
   var fmtDate = window.TS_FMT_DATE || function (d) { return d; };
@@ -581,8 +582,10 @@
     return (h === 1 ? '1 hour' : (h % 1 ? h.toFixed(2).replace(/0$/, '') : h) + ' hours');
   }
   function timeLabel(ev) {
-    if (ev.ondemand || !ev.start) return 'Available now';
-    return ev.start + '–' + endTime(ev) + ' UK time (' + (isBST(ev.date) ? 'BST' : 'GMT') + ')';
+    if (ev.ondemand) return 'Available now';
+    if (!ev.start) return ev.past ? '' : 'Time to be confirmed';
+    var tz = ' UK time (' + (isBST(ev.date) ? 'BST' : 'GMT') + ')';
+    return ev.mins ? ev.start + '–' + endTime(ev) + tz : 'From ' + ev.start + tz;
   }
   function icsFor(ev) {
     var d = ev.date.replace(/-/g, '');
@@ -594,7 +597,7 @@
     return lines.join('\r\n');
   }
   function calendarMenu(ev) {
-    if (ev.past || ev.ondemand) return '';
+    if (ev.past || ev.ondemand || !ev.start || !ev.mins) return '';
     var d = ev.date.replace(/-/g, '');
     var g = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(ev.title) +
       '&dates=' + d + 'T' + ev.start.replace(':', '') + '00/' + d + 'T' + endTime(ev).replace(':', '') + '00&ctz=Europe/London';
@@ -607,15 +610,18 @@
     var day = dt.getDate();
     var mon = dt.toLocaleDateString('en-GB', { month: 'short' });
     var yr = dt.getFullYear();
-    var action = ev.past ? (ev.recording ? '<a class="btn btn-secondary btn-sm" href="#">Watch the recording</a>' : (ev.takeaways ? '<a class="btn btn-secondary btn-sm" href="#">Read the takeaways</a>' : ''))
-      : ev.ondemand ? '<a class="btn btn-sm" href="#">Listen now</a>'
-      : '<a class="btn btn-sm" href="' + base + 'event.html?event=' + ev.id + '">Register</a>';
+    var url = base + 'event.html?event=' + ev.id;
+    var action = ev.past ? '<a class="btn btn-secondary btn-sm" href="' + url + '">' + (ev.recording ? 'Watch the recording' : ev.takeaways ? 'Read the takeaways' : 'See what we covered') + '</a>'
+      : ev.ondemand ? '<a class="btn btn-sm" href="' + url + '">' + (ev.format === 'Podcast' ? 'Listen now' : 'Watch now') + '</a>'
+      : '<a class="btn btn-sm" href="' + url + '">Register</a>';
+    var when = ev.ondemand ? 'On demand' : fmtDate(ev.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    var tl = timeLabel(ev);
+    if (!ev.past && !ev.ondemand && tl) when += ' · ' + tl + (ev.mins ? ' · ' + durLabel(ev.mins) : '');
     return '<li class="event-card" data-tags="' + esc(ev.format.toLowerCase().replace(/\s+/g, '-')) + '">' +
       '<div class="event-date" aria-hidden="true"><b>' + (ev.ondemand ? '&#9654;' : day) + '</b><span>' + (ev.ondemand ? 'On demand' : mon + ' ' + yr) + '</span></div>' +
       '<div class="event-body"><p class="event-meta"><span class="badge">' + esc(ev.format) + '</span> ' + esc(ev.topic) + (ev.sample ? ' <span class="sample-tag">Sample</span>' : '') + '</p>' +
-      '<h3><a href="' + (ev.past || ev.ondemand ? '#' : base + 'event.html?event=' + ev.id) + '">' + esc(ev.title) + '</a></h3>' +
-      '<p class="event-when">' + (ev.ondemand ? 'On demand' : fmtDate(ev.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })) +
-      (ev.past ? '' : ' · ' + timeLabel(ev) + (ev.mins && !ev.ondemand ? ' · ' + durLabel(ev.mins) : '')) + '</p>' +
+      '<h3><a href="' + url + '">' + esc(ev.title) + '</a></h3>' +
+      '<p class="event-when">' + when + '</p>' +
       '<p class="muted">' + esc(ev.summary) + '</p></div>' +
       '<div class="event-actions">' + action + calendarMenu(ev) + '</div></li>';
   }
@@ -688,34 +694,134 @@
     });
   }
 
+  function personMini(pid, base) {
+    var p = PROFILES[pid];
+    if (!p) return '';
+    return '<li class="person-mini"><span class="wf-placeholder avatar-sm">Photo</span><span><a href="' + (base || '') + 'profile.html?person=' + pid + '"><strong>' + esc(p.n) + '</strong></a><br><span class="muted">' + esc(p.r) + '</span></span></li>';
+  }
   function initEventPage() {
     var host = $('#event-page');
     if (!host) return;
     var id = param('event') || 'ukraine-defence';
     var ev = EVENTS.filter(function (e) { return e.id === id; })[0] || EVENTS[0];
+    var state = ev.past ? 'past' : ev.ondemand ? 'ondemand' : 'upcoming';
     $all('[data-ev]', host).forEach(function (el) {
       var k = el.getAttribute('data-ev');
-      if (k === 'date') el.textContent = fmtDate(ev.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-      else if (k === 'time') el.textContent = timeLabel(ev);
-      else if (k === 'duration') el.textContent = durLabel(ev.mins);
-      else if (k === 'calendar') el.innerHTML = calendarMenu(ev);
-      else if (ev[k] !== undefined) el.textContent = ev[k];
+      var v;
+      if (k === 'date') v = ev.ondemand ? 'On demand' : fmtDate(ev.date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      else if (k === 'time') v = timeLabel(ev);
+      else if (k === 'duration') v = durLabel(ev.mins);
+      else if (k === 'calendar') { el.innerHTML = calendarMenu(ev); return; }
+      else v = ev[k];
+      el.textContent = v || '';
+      if (el.hasAttribute('data-hide-empty')) {
+        el.hidden = !v;
+        var dt = el.previousElementSibling;
+        if (dt && dt.tagName === 'DT') dt.hidden = !v;
+      }
     });
+    $all('[data-state]', host).forEach(function (el) { el.hidden = el.getAttribute('data-state').split(' ').indexOf(state) === -1; });
+    var body = $('#ev-body');
+    if (body) body.innerHTML = (ev.body || [ev.summary]).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('');
+    var status = $('#ev-status');
+    if (status && ev.past) status.textContent = 'This event took place on ' + fmtDate(ev.date, { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
+    var catchup = $('#ev-catchup');
+    if (catchup) {
+      catchup.innerHTML = ev.recording || ev.takeaways
+        ? (ev.recording ? '<div class="wf-placeholder ratio-16-9">Recording (video player)</div>' : '') +
+          (ev.takeaways ? '<h3 style="margin-top:1rem">Key takeaways</h3><p class="ph-text">[Three to five points from the event, written up by the team afterwards.]</p>' : '') +
+          '<p class="wf-meta"><span class="sample-tag">Sample</span> Shown to illustrate the proposal; we don\u2019t know whether a recording exists.</p>'
+        : '<p>There is no recording of this event. The team is happy to talk through what was covered.</p>';
+    }
+    var player = $('#ev-player');
+    if (player) player.textContent = ev.player || 'Player';
     document.title = ev.title + ' | Travers Smith prototype';
     var sp = $('#ev-speakers');
     if (sp) {
-      var html = ev.speakers.map(function (pid) {
-        var p = PEOPLE[pid];
-        return p ? '<li class="person-mini"><span class="wf-placeholder avatar-sm">Photo</span><span><a href="#"><strong>' + esc(p.name) + '</strong></a><br><span class="muted">' + esc(p.role) + '</span></span></li>' : '';
-      }).join('');
+      var html = ev.speakers.map(function (pid) { return personMini(pid); }).join('');
       if (ev.guests) html += '<li class="person-mini"><span class="wf-placeholder avatar-sm">Logo</span><span><strong>' + esc(ev.guests) + '</strong><br><span class="muted">Guest speakers</span></span></li>';
-      if (!html && ev.team) html = '<li class="person-mini"><span class="wf-placeholder avatar-sm">Photo</span><span><strong>' + esc(ev.team) + '</strong><br><span class="muted">Speakers to be announced</span></span></li>';
+      if (!ev.speakers.length && ev.team) html += '<li class="person-mini"><span class="wf-placeholder avatar-sm">Photo</span><span><strong>' + esc(ev.team) + '</strong><br><span class="muted">' + (ev.past || ev.ondemand ? 'Travers Smith speakers' : 'Speakers to be announced') + '</span></span></li>';
       sp.innerHTML = html;
+      var h = $('#ev-sp-h');
+      if (h) h.textContent = ev.speakerLabel || (ev.past ? 'Speakers' : 'Speakers');
     }
     var sample = $('#ev-sample');
     if (sample) sample.hidden = !ev.sample;
     var hub = $('#ev-hub');
     if (hub) hub.hidden = !ev.hub;
+    var rel = $('#ev-related');
+    if (rel) {
+      var upcoming = EVENTS.filter(function (e) { return e.id !== ev.id && !e.past && !e.ondemand; }).sort(function (a, b) { return a.date > b.date ? 1 : -1; });
+      var same = EVENTS.filter(function (e) { return e.id !== ev.id && e.topic === ev.topic; });
+      var list = same.concat(upcoming.filter(function (e) { return same.indexOf(e) === -1; })).slice(0, 3);
+      rel.innerHTML = list.map(function (e) { return eventCard(e, ''); }).join('');
+    }
+  }
+
+  /* --- Profiles (R20–R22) ---------------------------------------------------- */
+  function dealType(t) {
+    if (/\b(sale|sold|exit|divest|disposal|sell)/i.test(t) && !/acquisition of|investment in|investment into/i.test(t.split(' on ')[1] || '')) return 'sale';
+    if (/acquisition|acquire|investment|invest|takeover|offer for|buy|merger|recapitalisation/i.test(t)) return 'buy';
+    return 'other';
+  }
+  function initProfile() {
+    var host = $('#profile');
+    if (!host) return;
+    var id = param('person') || 'emma-havas';
+    var p = PROFILES[id];
+    if (!p) { id = 'emma-havas'; p = PROFILES[id]; var m = $('#pf-missing'); if (m) m.hidden = false; }
+    var first = p.n.split(' ')[0];
+    $all('[data-pf]', host).forEach(function (el) { el.textContent = p[el.getAttribute('data-pf')] || ''; });
+    document.title = p.n + ' | Travers Smith prototype';
+    $('#pf-email').textContent = 'Email ' + first;
+    $('#pf-bio').innerHTML = p.b.map(function (t, i) { return '<p' + (i === 0 ? ' class="lead"' : '') + '>' + esc(t) + '</p>'; }).join('');
+    $('#pf-areas').innerHTML = p.a.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('');
+    var rec = $('#pf-rec');
+    if (p.rec.length) rec.innerHTML = p.rec.map(esc).join('<br>');
+    else { rec.hidden = true; $('#pf-rec-dt').hidden = true; }
+    if (p.q.length) {
+      var q = $('#pf-quote');
+      q.hidden = false;
+      $('p', q).textContent = '\u201c' + p.q[0].q + '\u201d';
+      $('cite', q).textContent = p.q[0].c;
+    }
+    // Experience: deals with type tags and press release links
+    var links = window.TS_DEAL_LINKS || [];
+    var dl = $('#pdeals');
+    var types = {};
+    dl.innerHTML = p.d.map(function (d) {
+      var t = dealType(d);
+      types[t] = true;
+      var link = links.filter(function (l) { return d.indexOf(l.match) !== -1; })[0];
+      return '<li data-tags="' + t + '"><span class="d' + (link ? '' : ' ph-text') + '">' + (link ? link.date : '[date]') + '</span>' +
+        (link ? '<a href="#">' + esc(d) + '</a><span class="badge">Press release</span>' : '<span>' + esc(d) + '</span><span></span>') + '</li>';
+    }).join('') + '<li class="panel surface" data-empty hidden>No deals of this type.</li>';
+    var tab = $('#pf-deals-tab');
+    if (!p.d.length) { tab.hidden = true; }
+    else tab.textContent = 'Experience (' + p.d.length + ')';
+    $all('#pf-deal-chips .chip[data-filter]').forEach(function (c) { var f = c.getAttribute('data-filter'); if (f !== 'all') c.hidden = !types[f]; });
+    if (p.d.length < 5) $('#pf-deal-chips').hidden = true;
+    // Latest: content and events where the person is named
+    var items = (window.TS_PERSON_CONTENT || []).filter(function (c) { return c.people.indexOf(id) !== -1; }).map(function (c) {
+      return { sort: c.label.replace(/.*· /, ''), html: '<li><span class="wf-meta">' + esc(c.label) + '</span><h3><a href="' + c.href + '">' + esc(c.title) + '</a></h3><p>' + esc(c.role) + '</p></li>' };
+    });
+    EVENTS.forEach(function (e) {
+      if (e.speakers.indexOf(id) === -1) return;
+      items.push({ html: '<li><span class="wf-meta">' + esc(e.format) + ' · ' + (e.ondemand ? 'On demand' : fmtDate(e.date)) + '</span><h3><a href="event.html?event=' + e.id + '">' + esc(e.title) + '</a></h3><p>' + (e.past || e.ondemand ? 'Spoke at this event' : 'Speaking at this event') + '</p></li>', date: e.date });
+    });
+    var lt = $('#pf-latest-tab');
+    if (!items.length) { lt.hidden = true; }
+    else {
+      lt.textContent = 'Latest from ' + first + ' (' + items.length + ')';
+      $('#plist').innerHTML = items.map(function (i) { return i.html; }).join('');
+    }
+    // Colleagues in the same first practice
+    var col = Object.keys(PROFILES).filter(function (k) { return k !== id && PROFILES[k].a.indexOf(p.a[0]) !== -1; }).slice(0, 3);
+    $('#pf-colleagues').innerHTML = col.map(function (k) {
+      var c = PROFILES[k];
+      return '<div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="profile.html?person=' + k + '">' + esc(c.n) + '</a></h3><p class="muted">' + esc(c.r) + '</p><p>' + esc(c.t) + '</p></div></div>';
+    }).join('');
+    if (!col.length) $('#pf-colleagues').closest('section').hidden = true;
   }
 
   /* --- Sign-up: topics first (R60–R63) ------------------------------------ */
@@ -833,6 +939,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    initProfile();
+    initEventPage();
     initAccordions();
     initTabs();
     initCarousels();
@@ -848,7 +956,6 @@
     initBriefing();
     initEventsList();
     initNextEvents();
-    initEventPage();
     initSignup();
     initContact();
     initRegion();

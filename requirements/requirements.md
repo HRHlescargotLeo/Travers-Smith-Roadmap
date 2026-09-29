@@ -1,4 +1,4 @@
-# Travers Smith — prototype requirements (V1)
+# Travers Smith — prototype requirements (V1.1)
 
 Source: ClerksWell phase 1 review of traverssmith.com and four competitor sites (29 Sep 2026).
 Idea numbers (#nn) refer to the Opportunities page. These are ClerksWell proposals, not client
@@ -25,6 +25,7 @@ Area are out of scope (separate projects).
 - R20 Selected deals are records with date, type and link to the press release, filterable on the profile (#8).
 - R21 "Latest from" lists deals, briefings, podcasts and events where the person is named (#9).
 - R22 An at-a-glance panel: role, practices, recognition, admission, languages, education (#10).
+- R23 Every lawyer named anywhere in the prototypes links to their own profile (`profile.html?person=<id>`). (V1.1 feedback)
 
 ## Prototype 3 — Briefings and topic hubs (ideas #11–#16, #26)
 - R30 Briefing header shows content type, full date, reading time and topic (#11, #12).
@@ -42,6 +43,7 @@ Area are out of scope (separate projects).
 - R53 Event cards and pages show full date, time with time zone, duration, format and add to calendar (.ics and Google) (#22).
 - R54 Registration is a short native form with a confirmation that offers the calendar file (#23).
 - R55 The event page has an essentials panel: date, time, duration, format, where, CPD (#22).
+- R56 Every event in the listing has its own page: upcoming (register), on demand (player) and past (catch up, speakers, more events). (V1.1 feedback)
 
 ## Prototype 5 — Sign-up and contact (ideas #25, #27–#29)
 - R60 Sign-up starts with topics: named series, practice areas and events (#25).
@@ -59,3 +61,8 @@ Area are out of scope (separate projects).
 - R72 Headline figures come from one source and add up across regions (#31).
 - R73 Cross-border deals show their jurisdictions and feed the International and regional pages (#32).
 - R74 Regional pages list jurisdictions, recent matters and who to call; the region can be switched in place (#30).
+
+## Change log
+- V1.1 (29 Sep 2026), from Leo's review:
+  1. Clicking a person jumped to the top of the page. Every named lawyer now opens a profile, using shortened content from their traverssmith.com profile (R23).
+  2. Event cards for on-demand and past events went nowhere. Every event now has a page, and the listing carries eleven real past events from 2024 to 2026 (R56).

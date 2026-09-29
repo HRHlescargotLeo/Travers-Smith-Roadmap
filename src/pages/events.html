@@ -19,7 +19,7 @@
           <div><h2>What we're proposing</h2><p>Upcoming events first, with on-demand and past events on their own tabs. Every card gives the full date with the year, the time with its time zone, how long it lasts, the format and an add-to-calendar option. Past events link to a recording or the takeaways where there is one. The event page puts the essentials at the top and replaces the embedded registration frame with a short form in the site's own style.</p></div>
           <div><h2>Why</h2><p>On 29 September the live Events page mixes 36 past and future results, holds one item under "Future events", and still promotes "ESG Academy 2024". The homepage's "Latest events" shows three past events while the 14 October Ukraine defence webinar goes unmentioned. Anyone planning their diary has to work out which events are still to come.</p></div>
         </div>
-        <p class="proposal-foot">The Ukraine webinar and past events are real; other upcoming events are samples. Ideas 19–23.</p>
+        <p class="proposal-foot">Every event opens its own page. The Ukraine webinar, the on-demand items and the eleven past events (2024 to 2026) are from traverssmith.com; the other upcoming events are samples. Ideas 19–24.</p>
       </div>
     </aside>
 
@@ -51,16 +51,17 @@
         <button type="button" class="chip" data-format="webinar" aria-pressed="false">Webinar</button>
         <button type="button" class="chip" data-format="in-person" aria-pressed="false">In person</button>
         <button type="button" class="chip" data-format="conference" aria-pressed="false">Conference</button>
+        <button type="button" class="chip" data-format="podcast" aria-pressed="false">Podcast</button>
         <span class="wf-meta" id="event-count" aria-live="polite"></span>
       </div>
-      <ul class="event-list" id="event-list" data-base="~/pages/"></ul>
+      <ul class="event-list" id="event-list" data-base=""></ul>
       <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Events move from Upcoming to Past automatically at their end time. "Add to calendar" gives an .ics file for Outlook and Apple, or opens Google Calendar. Times show BST or GMT depending on the date.</p>
       <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Do recordings or slides exist for most past events? If not, a short write-up of the takeaways is the cheaper option, and doubles as a knowledge article.</p>
 
       <!-- Homepage module (R51) -->
       <section aria-labelledby="home-mod" style="margin-top:3rem">
         <div class="section-head"><h2 id="home-mod">Homepage module: upcoming events</h2><span class="wf-meta">Shown here for review</span></div>
-        <ul class="event-list" data-next-events="3" data-base="~/pages/"></ul>
+        <ul class="event-list" data-next-events="3" data-base=""></ul>
         <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Replaces "Latest events" on the homepage. It shows the next three upcoming events, and only falls back to "Recent events" when nothing is scheduled.</p>
       </section>
     </div>

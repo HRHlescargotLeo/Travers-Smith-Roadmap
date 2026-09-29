@@ -41,7 +41,7 @@
           <div><h2>What we're proposing</h2><p>The essentials in one panel at the top: date, time and time zone, duration, format, where, CPD and an add-to-calendar option. Registration is a short form on the page itself, with a confirmation that says what happens next and offers the calendar file straight away.</p></div>
           <div><h2>Why</h2><p>The live webinar page gives "03:00 PM UK time" and nothing about duration or platform. Registration sits in an 800px frame from the marketing platform, with a square navy button unlike the rest of the site and a stretch of empty space below it.</p></div>
         </div>
-        <p class="proposal-foot">Opens the Ukraine webinar by default; other events open from the listing. Ideas 22 and 23.</p>
+        <p class="proposal-foot">Opens the Ukraine webinar by default; every event on the listing opens its own page, including on-demand and past events. Past events and speakers are real; recordings and takeaways are shown as samples. Ideas 22–24.</p>
       </div>
     </aside>
 
@@ -52,14 +52,20 @@
           <p class="eyebrow"><span data-ev="format"></span> · <span data-ev="topic"></span> <span class="sample-tag" id="ev-sample" hidden>Sample</span></p>
           <h1 data-ev="title">Event</h1>
           <p class="lead" data-ev="summary"></p>
+          <p class="panel surface ev-status" id="ev-status" data-state="past" hidden></p>
         </div>
       </div>
 
       <div class="container">
         <div class="split">
           <div>
-            <!-- Registration (R54) -->
-            <section aria-labelledby="reg-h">
+            <section aria-labelledby="about-h">
+              <h2 id="about-h">About this event</h2>
+              <div id="ev-body"></div>
+            </section>
+
+            <!-- Upcoming: registration (R54) -->
+            <section aria-labelledby="reg-h" data-state="upcoming">
               <h2 id="reg-h">Register</h2>
               <form id="reg-form" data-validate data-done="reg-done">
                 <div class="form-grid">
@@ -83,30 +89,65 @@
               <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Can the marketing platform accept a submission from a native form (by API), or does it need to stay embedded? That decides the effort for this idea.</p>
             </section>
 
-            <section aria-labelledby="sp-h">
-              <h2 id="sp-h">Speakers</h2>
+            <!-- On demand: player (R50) -->
+            <section aria-labelledby="od-h" data-state="ondemand" hidden>
+              <h2 id="od-h">Watch or listen</h2>
+              <div class="wf-placeholder ratio-16-9" id="ev-player">Player</div>
+              <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>On-demand content plays on the page. If the firm wants to know who is watching, the player sits behind a one-field email gate instead.</p>
+            </section>
+
+            <!-- Past: catch up (R50) -->
+            <section aria-labelledby="cu-h" data-state="past" hidden>
+              <h2 id="cu-h">Catch up</h2>
+              <div id="ev-catchup"></div>
+              <p><button type="button" class="btn btn-secondary follow-btn" data-follow="Event invitations"><span class="follow-label">Follow Event invitations</span></button></p>
+              <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Past events keep their page, so links from emails and LinkedIn still work. The registration form is replaced by the recording or a short write-up, and an invitation to future events.</p>
+            </section>
+
+            <section aria-labelledby="ev-sp-h">
+              <h2 id="ev-sp-h">Speakers</h2>
               <ul class="clean" id="ev-speakers"></ul>
             </section>
 
             <p class="panel surface" id="ev-hub" hidden>Part of our <a href="../pages/topic-hub.html">pensions consolidation</a> coverage.</p>
           </div>
 
-          <!-- Essentials panel (R53) -->
+          <!-- Essentials panel (R53, R55) -->
           <aside class="panel surface" aria-label="Event details">
             <dl class="essentials">
               <dt>Date</dt><dd data-ev="date"></dd>
-              <dt>Time</dt><dd data-ev="time"></dd>
-              <dt>Duration</dt><dd data-ev="duration"></dd>
+              <dt>Time</dt><dd data-ev="time" data-hide-empty></dd>
+              <dt>Duration</dt><dd data-ev="duration" data-hide-empty></dd>
               <dt>Format</dt><dd data-ev="format"></dd>
               <dt>Where</dt><dd data-ev="where"></dd>
-              <dt>CPD</dt><dd data-ev="cpd"></dd>
+              <dt>CPD</dt><dd data-ev="cpd" data-hide-empty></dd>
             </dl>
             <div data-ev="calendar"></div>
           </aside>
         </div>
+
+        <section aria-labelledby="more-h" style="margin-top:2.5rem">
+          <div class="section-head"><h2 id="more-h">More events</h2><a href="../pages/events.html">All training and events</a></div>
+          <ul class="event-list" id="ev-related"></ul>
+        </section>
       </div>
     </div>
   </main>
+
+  <!-- Follow modal, shared across prototypes -->
+  <div class="wf-modal" id="follow-modal" role="dialog" aria-modal="true" aria-labelledby="follow-title">
+    <div class="wf-modal-panel">
+      <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+      <h2 id="follow-title">Follow <span data-follow-topic></span></h2>
+      <p>We'll email you new briefings, events and podcasts on this topic. You can change topics or unsubscribe at any time.</p>
+      <form id="follow-form" data-validate>
+        <div class="field"><label for="follow-email">Work email</label><input type="email" id="follow-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+        <button type="submit" class="btn">Follow</button>
+        <p class="field-hint">Want more than one topic? <a href="../pages/stay-in-touch.html">Choose all your topics</a></p>
+      </form>
+    </div>
+  </div>
+
 
   <!-- Prototype pager (replaces the Travers Smith footer) -->
   <footer class="proto-footer">
@@ -117,6 +158,7 @@
   </footer>
 
   <script src="../js/data.js"></script>
+  <script src="../js/profiles.js"></script>
   <script src="../js/wireframe.js"></script>
 </body>
 </html>

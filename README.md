@@ -1,4 +1,4 @@
-# Travers Smith — website improvement prototypes (V1)
+# Travers Smith — website improvement prototypes (V1.1)
 
 Six clickable greyscale prototypes for improvements to traverssmith.com, prepared by ClerksWell
 following the phase 1 review (29 September 2026). This round is about structure and behaviour;
@@ -16,7 +16,7 @@ GitHub Pages publishes from the `docs/` folder on `main`
 
 ## Prototypes
 1. Service page — `pages/service.html` (Corporate M&A)
-2. Profiles — `pages/profile.html` (Emma Havas)
+2. Profiles — `pages/profile.html?person=<id>` (Emma Havas by default; every named lawyer has a profile)
 3. Briefings — `pages/briefing.html`, plus the topic hub at `pages/topic-hub.html`
 4. Events — `pages/events.html`, plus the event page at `pages/event.html` (`?event=<id>`)
 5. Stay in touch — `pages/stay-in-touch.html`, plus `pages/contact.html` (`?practice=<id>`)
@@ -27,7 +27,8 @@ Module library: `modules/library.html`. Requirements: `requirements/requirements
 ## Content
 People, deals, briefings and past events are from traverssmith.com. Case studies, some upcoming
 events and all regional detail are samples written for the prototypes and are tagged "Sample";
-unknown facts appear as [placeholders]. Sample data lives in `src/js/data.js`.
+unknown facts appear as [placeholders]. Sample data lives in `src/js/data.js`; profile content,
+shortened from traverssmith.com, lives in `src/js/profiles.js`.
 
 ## Build
 ```

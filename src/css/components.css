@@ -466,3 +466,5 @@ body.hub .hub-hero { border-top: 0; }
 
 /* Hub landing: six cards need a 2-up rhythm ------------------------------- */
 .proto-sub { font-size: 0.9375rem; }
+
+[hidden] { display: none !important; }
