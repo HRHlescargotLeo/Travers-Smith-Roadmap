@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us | Travers Smith prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces the Travers Smith header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Travers Smith prototypes, overview">Travers Smith <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/service.html" data-proto="service"><span class="n">1</span> Service page</a></li>
+          <li><a href="../pages/profile.html" data-proto="profile"><span class="n">2</span> Profiles</a></li>
+          <li><a href="../pages/briefing.html" data-proto="briefing topic-hub"><span class="n">3</span> Briefings</a></li>
+          <li><a href="../pages/events.html" data-proto="events event"><span class="n">4</span> Events</a></li>
+          <li><a href="../pages/stay-in-touch.html" data-proto="stay-in-touch contact"><span class="n">5</span> Stay in touch</a></li>
+          <li><a href="../pages/international.html" data-proto="international region"><span class="n">6</span> International</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 6 · Contact, with the <a href="../pages/stay-in-touch.html">sign-up</a> alongside</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Contact asks what the enquiry is about before anything else. A new legal matter gets a short form routed to the right practice. Media, careers and existing clients are shown who to contact directly, without filling in a form at all. Data protection requests get their own short form. Every route says what happens next.</p></div>
+          <div><h2>Why</h2><p>The live form has nine fields, seven of them required, and a single drop-down with 12 kinds of query, from new work to audio transcript corrections. A journalist on deadline and a GC with a new deal fill in the same form, including job title and company, and nothing says when anyone will reply.</p></div>
+        </div>
+        <p class="proposal-foot">Addresses and switchboard numbers are from the live page. Ideas 27 and 28.</p>
+      </div>
+    </aside>
+
+    <div class="page-hero">
+      <div class="container">
+        <h1>Contact us</h1>
+        <p class="lead">Tell us what it's about and we'll make sure it reaches the right people.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="split">
+        <div>
+          <!-- Reason first (R64) -->
+          <fieldset>
+            <legend>What is your enquiry about?</legend>
+            <div class="reason-grid">
+              <label class="reason-card"><input type="radio" name="reason" value="new"><span><strong>A new legal matter</strong><span>We'll route it to the right practice</span></span></label>
+              <label class="reason-card"><input type="radio" name="reason" value="existing"><span><strong>A matter we're working on</strong><span>Past or current clients</span></span></label>
+              <label class="reason-card"><input type="radio" name="reason" value="media"><span><strong>Media enquiry</strong><span>Journalists and press</span></span></label>
+              <label class="reason-card"><input type="radio" name="reason" value="careers"><span><strong>Careers</strong><span>Training contracts, apprenticeships and jobs</span></span></label>
+              <label class="reason-card"><input type="radio" name="reason" value="data"><span><strong>Your personal data</strong><span>Access, correction or deletion requests</span></span></label>
+              <label class="reason-card"><input type="radio" name="reason" value="other"><span><strong>Something else</strong><span>Suppliers, finance and everything else</span></span></label>
+            </div>
+          </fieldset>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Nothing below appears until a reason is chosen. The 12 query types on the live form map onto these six. Opening this page with <code>?practice=</code> from a service page pre-selects "A new legal matter" and that practice.</p>
+
+          <!-- New matter (R65) -->
+          <div data-reason-panel="new" hidden>
+            <form id="cn-new" data-validate data-done="cn-new-done">
+              <div class="form-grid">
+                <div class="field"><label for="cn-name">Your name</label><input type="text" id="cn-name" autocomplete="name" required><p class="field-error" hidden>Enter your name</p></div>
+                <div class="field"><label for="cn-org">Organisation</label><input type="text" id="cn-org" autocomplete="organization" required><p class="field-error" hidden>Enter your organisation</p></div>
+                <div class="field"><label for="cn-email">Work email</label><input type="email" id="cn-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+                <div class="field"><label for="cn-practice">Area of law</label>
+                  <select id="cn-practice" required>
+                    <option value="">Choose one, or "Not sure"</option>
+                    <option value="corporate-ma">Corporate M&amp;A</option><option value="private-equity">Private equity</option><option value="funds">Funds and asset management</option><option value="finance">Finance and restructuring</option><option value="disputes">Disputes and investigations</option><option value="employment">Employment, pensions and incentives</option><option value="financial-services">Financial services regulation</option><option value="real-estate">Real estate</option><option value="tax">Tax</option><option value="unsure">Not sure</option>
+                  </select><p class="field-error" hidden>Choose an area, or "Not sure"</p></div>
+                <div class="field full"><label for="cn-msg">What do you need help with? <span class="muted">(no confidential details yet)</span></label><textarea id="cn-msg" rows="4" required></textarea><p class="field-error" hidden>Add a short description</p></div>
+              </div>
+              <button type="submit" class="btn">Send</button>
+            </form>
+            <div id="cn-new-done" class="confirm-box" hidden><div class="tick" aria-hidden="true">&#10003;</div><h2>Thanks, <span data-echo="cn-name"></span></h2><p>Your enquiry has gone to the <strong data-echo="cn-practice"></strong> team. After a conflict check, a partner will contact you, usually within one working day.</p></div>
+          </div>
+
+          <!-- Existing matter -->
+          <div data-reason-panel="existing" hidden>
+            <div class="panel surface"><h2 style="font-size:1.25rem">Contact your usual team</h2><p>The quickest route is the partner or associate you've been working with; their direct line is on their profile. If you're not sure who that is, call the switchboard on <strong>+44 20 7295 3000</strong>.</p><p>Past clients asking for documents can <a href="#">request them here</a>.</p></div>
+          </div>
+
+          <!-- Media -->
+          <div data-reason-panel="media" hidden>
+            <div class="panel surface"><h2 style="font-size:1.25rem">Press office</h2><p>For comment, interviews and press releases, contact the press office directly.</p><p class="ph-text">[Press office name] · [press email] · [direct line]</p><p><a href="#">Newsroom</a></p></div>
+          </div>
+
+          <!-- Careers -->
+          <div data-reason-panel="careers" hidden>
+            <div class="panel surface"><h2 style="font-size:1.25rem">Careers</h2><p>Vacancies, training contracts, vacation schemes and apprenticeships, with contacts for each, are on our careers pages.</p><p><a class="btn btn-secondary" href="#">Go to Join us</a></p></div>
+          </div>
+
+          <!-- Data protection (R66) -->
+          <div data-reason-panel="data" hidden>
+            <form id="cn-data" data-validate data-done="cn-data-done">
+              <div class="form-grid">
+                <div class="field"><label for="dp-name">Your name</label><input type="text" id="dp-name" autocomplete="name" required><p class="field-error" hidden>Enter your name</p></div>
+                <div class="field"><label for="dp-email">Email</label><input type="email" id="dp-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+                <div class="field full"><label for="dp-type">Request</label><select id="dp-type" required><option value="">Choose one</option><option>See the data you hold about me</option><option>Correct my data</option><option>Delete my data</option><option>Stop marketing emails</option><option>A complaint about how my data is used</option></select><p class="field-error" hidden>Choose a request</p></div>
+              </div>
+              <button type="submit" class="btn">Send request</button>
+            </form>
+            <div id="cn-data-done" class="confirm-box" hidden><div class="tick" aria-hidden="true">&#10003;</div><h2>Request received</h2><p>We'll confirm receipt at <strong data-echo="dp-email"></strong> and respond within one month, as the law requires.</p></div>
+          </div>
+
+          <!-- Something else -->
+          <div data-reason-panel="other" hidden>
+            <form id="cn-other" data-validate data-done="cn-other-done">
+              <div class="form-grid">
+                <div class="field"><label for="ot-name">Your name</label><input type="text" id="ot-name" autocomplete="name" required><p class="field-error" hidden>Enter your name</p></div>
+                <div class="field"><label for="ot-email">Email</label><input type="email" id="ot-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+                <div class="field full"><label for="ot-msg">Message</label><textarea id="ot-msg" rows="4" required></textarea><p class="field-error" hidden>Add a message</p></div>
+              </div>
+              <button type="submit" class="btn">Send</button>
+            </form>
+            <div id="cn-other-done" class="confirm-box" hidden><div class="tick" aria-hidden="true">&#10003;</div><h2>Thanks, <span data-echo="ot-name"></span></h2><p>We'll pass this to the right team and reply within three working days.</p></div>
+          </div>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Response times ("one working day" for new matters, "three working days" otherwise) are our suggestion. What can the firm commit to?</p>
+        </div>
+
+        <!-- Offices and what happens next (R67) -->
+        <aside class="stack">
+          <div class="panel">
+            <h2 style="font-size:1.125rem">What happens next</h2>
+            <ol class="what-next">
+              <li><span>Your message goes straight to the team that handles it.</span></li>
+              <li><span>For new matters we run a conflict check before discussing detail.</span></li>
+              <li><span>We reply within the time shown after you send.</span></li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h2 style="font-size:1.125rem">London</h2>
+            <p>3 Stonecutter Street<br>London EC4A 4AW<br>+44 20 7295 3000</p>
+            <div class="wf-placeholder ratio-16-9">Map (opens Google Maps)</div>
+          </div>
+          <div class="panel">
+            <h2 style="font-size:1.125rem">Brussels</h2>
+            <p>Avenue des Arts 44<br>1040 Brussels<br>+32 2 882 77 99</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the Travers Smith footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Greyscale, structure only · Sample content is marked in the notes</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

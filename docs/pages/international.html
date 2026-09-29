@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International | Travers Smith prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces the Travers Smith header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Travers Smith prototypes, overview">Travers Smith <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/service.html" data-proto="service"><span class="n">1</span> Service page</a></li>
+          <li><a href="../pages/profile.html" data-proto="profile"><span class="n">2</span> Profiles</a></li>
+          <li><a href="../pages/briefing.html" data-proto="briefing topic-hub"><span class="n">3</span> Briefings</a></li>
+          <li><a href="../pages/events.html" data-proto="events event"><span class="n">4</span> Events</a></li>
+          <li><a href="../pages/stay-in-touch.html" data-proto="stay-in-touch contact"><span class="n">5</span> Stay in touch</a></li>
+          <li><a href="../pages/international.html" data-proto="international region"><span class="n">6</span> International</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 6 of 6 · International, with a regional page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The International page explains the model in three steps, then lets the reader pick a region. Each regional page lists the jurisdictions the firm works in regularly, examples of recent matters and who to call. The headline figures come from one source, so the copy and the statistics can't disagree.</p></div>
+          <div><h2>Why</h2><p>The firm works with independent firms rather than opening offices, which is a real point of difference but a hard one to picture. The live page has two case studies and two statistics, says "over 150 firms" in the copy next to "160+" in the numbers, and its news feed's newest item is from January. Clients asking "do you cover Brazil?" have to phone to find out.</p></div>
+        </div>
+        <p class="proposal-foot">The model, statistics, case studies and International Board are from traverssmith.com. Regional figures, jurisdictions and most matters are samples for discussion. Ideas 30–32.</p>
+      </div>
+    </aside>
+
+    <div class="page-hero">
+      <div class="container">
+        <p class="breadcrumb-lite">International</p>
+        <h1>International approach</h1>
+        <p class="lead">Independent and bound only by your ambitions, we are wherever you need us to be. We work with leading independent law firms around the world, chosen for the issue and the jurisdiction, and coordinate the advice from London.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- One set of figures (R72) -->
+      <section aria-labelledby="intl-num">
+        <h2 class="visually-hidden" id="intl-num">In numbers</h2>
+        <div class="statistics">
+          <div class="stat-item dated"><span class="stat-value"><span id="intl-countries">50</span>+</span><span class="stat-title">countries we worked in last year</span><span class="stat-source">Year to 30 June 2026 · Sample figure</span></div>
+          <div class="stat-item dated"><span class="stat-value" id="intl-firms">160</span><span class="stat-title">independent law firms we worked with</span><span class="stat-source">Year to 30 June 2026 · Sample figure</span></div>
+          <div class="stat-item dated"><span class="stat-value">&gt;50%</span><span class="stat-title">of our Corporate M&amp;A work has an international component</span><span class="stat-source">From the Corporate M&amp;A page</span></div>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The totals add up the regional figures, so the International page, the regional pages and any copy that quotes them always agree.</p>
+      </section>
+
+      <!-- How it works (R71) -->
+      <section aria-labelledby="how">
+        <div class="section-head"><h2 id="how">How it works</h2></div>
+        <ol class="how-steps">
+          <li><h3>We choose the firm</h3><p>From over a decade of working relationships, we pick independent firms and individual lawyers with the right issue and sector experience in each jurisdiction, and we can recommend local firms impartially.</p></li>
+          <li><h3>One engagement, one fee arrangement</h3><p>We regularly coordinate cross-border advice through a single engagement letter and fee arrangement, so you deal with one team.</p></li>
+          <li><h3>We take responsibility</h3><p>In appropriate cases we take responsibility for the work of the firms we partner with, and we manage conflicts and price in every case.</p></li>
+        </ol>
+      </section>
+
+      <!-- Region picker (R70) -->
+      <section aria-labelledby="regions">
+        <div class="section-head"><h2 id="regions">Where we work</h2></div>
+        <div class="region-tiles">
+          <a class="region-tile" href="../pages/region.html?r=europe" data-region-tile="europe"><span class="wf-placeholder">Map: Europe</span><h3>Europe</h3><p><span data-rt="countries"></span> countries · <span data-rt="firms"></span> firms</p></a>
+          <a class="region-tile" href="../pages/region.html?r=americas" data-region-tile="americas"><span class="wf-placeholder">Map: Americas</span><h3>Americas</h3><p><span data-rt="countries"></span> countries · <span data-rt="firms"></span> firms</p></a>
+          <a class="region-tile" href="../pages/region.html?r=apac" data-region-tile="apac"><span class="wf-placeholder">Map: Asia Pacific</span><h3>Asia Pacific</h3><p><span data-rt="countries"></span> countries · <span data-rt="firms"></span> firms</p></a>
+          <a class="region-tile" href="../pages/region.html?r=mea" data-region-tile="mea"><span class="wf-placeholder">Map: Middle East and Africa</span><h3>Middle East and Africa</h3><p><span data-rt="countries"></span> countries · <span data-rt="firms"></span> firms</p></a>
+        </div>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Would a simple world map help, or are region tiles enough? A map is more striking but takes more upkeep and works less well on a phone.</p>
+      </section>
+
+      <section aria-labelledby="intl-cases">
+        <div class="section-head"><h2 id="intl-cases">Case studies</h2></div>
+        <ul class="card-grid">
+          <li class="card"><span class="wf-meta">Corporate · 50+ jurisdictions</span><h3 class="card-title">FTSE 100 technology company</h3><p class="card-text">The approach taken to deliver a complex and time-pressured transaction across over 50 jurisdictions.</p><a class="card-link" href="#">Read the case study</a></li>
+          <li class="card"><span class="wf-meta">Restructuring · 14 jurisdictions</span><h3 class="card-title">Groupon</h3><p class="card-text">A cross-practice team advising Groupon on the restructure of its international business.</p><a class="card-link" href="#">Read the case study</a></li>
+        </ul>
+      </section>
+
+      <!-- Current cross-border news (R73) -->
+      <section aria-labelledby="intl-news">
+        <div class="section-head"><h2 id="intl-news">Recent cross-border work</h2></div>
+        <ul class="clean deal-list">
+          <li><span class="d">24 Sep 2026</span><a href="#">Deepki on its acquisitions of EVORA Global and Metry</a><span class="badge">France · Sweden · UK</span></li>
+          <li><span class="d">24 Sep 2026</span><a href="#">Phoenix Equity Partners and the sellers on the sale of Logiq to IBM</a><span class="badge">US · UK</span></li>
+          <li><span class="d">2 Dec 2025</span><a href="#">Marshall Group on its third carve-out transaction of 2025</a><span class="badge">International</span></li>
+        </ul>
+        <p class="wf-note" data-note="3"><span class="wf-note-label">Behaviour</span>Any deal or press release tagged with a jurisdiction outside the UK appears here and on the relevant regional page. The jurisdictions shown are illustrative.</p>
+      </section>
+
+      <section aria-labelledby="board">
+        <div class="section-head"><h2 id="board">International Board</h2></div>
+        <div class="people-grid">
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">William Howard</a></h3><p class="muted">Head of International</p><p>+44 20 7295 3483</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Rob Fell</a></h3><p class="muted">Partner</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Andrew Gillen</a></h3><p class="muted">Senior Partner</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="../pages/profile.html">Emma Havas</a></h3><p class="muted">Partner</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Danny Riding</a></h3><p class="muted">Partner</p></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the Travers Smith footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Greyscale, structure only · Sample content is marked in the notes</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate M&amp;A | Travers Smith prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 6 · Service page, shown with Corporate M&amp;A</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The same service page, reordered so that the evidence comes before the people. A short intro, a list of the kinds of matter the team handles, the statistics with a date and source under each, a case study, a feed that only contains deals, and directory quotes with their year. Then four key contacts, the rest of the team one click away, and a short form for sending the practice a brief.</p></div>
+          <div><h2>Why</h2><p>The current Corporate M&amp;A page has strong material but no case study, and the numbers and quotes carry no date, so a reader can't tell whether "the last 24 months" means this year or three years ago. Twenty partner cards sit between the statistics and the proof. The deal feed also includes a Senior Counsel promotions announcement, which is good news but not a deal.</p></div>
+        </div>
+        <p class="proposal-foot">Case studies are samples written for the prototype. Deals, people and quotes are from traverssmith.com. Ideas 1, 3–7 on the opportunities page.</p>
+      </div>
+    </aside>
+
+    <!-- Page head: one visible H1 (R16) -->
+    <div class="page-hero">
+      <div class="container">
+        <p class="breadcrumb-lite">Services › Transactional › Corporate M&amp;A</p>
+        <h1>Corporate M&amp;A</h1>
+        <p class="lead">Whether furthering growth or pursuing an investment, M&amp;A is one of the most significant and high-pressured processes a company goes through. We act for buyers, sellers, boards and investors on public takeovers and private deals, and over half of our work has an international component.</p>
+        <div class="row hero-actions">
+          <a class="btn" href="#enquire">Discuss a matter</a>
+          <button type="button" class="btn btn-secondary follow-btn" data-follow="Corporate M&amp;A"><span class="follow-label">Follow Corporate M&amp;A</span></button>
+          <button type="button" class="btn-link" data-copy-link="">Copy link to this page</button>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The visible title is the page's only H1. "Follow" adds Corporate M&amp;A to the reader's email preferences (asks for an email address the first time) and is shared with prototypes 3 and 5.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- What we do (R12) -->
+      <section aria-labelledby="whatwedo">
+        <div class="section-head"><h2 id="whatwedo">What we do</h2><a href="#deals">See recent deals</a></div>
+        <ul class="clean matter-list">
+          <li><span>Public takeovers under the UK Takeover Code</span><span class="n">Public M&amp;A</span></li>
+          <li><span>Private acquisitions and disposals</span><span class="n">Private M&amp;A</span></li>
+          <li><span>Buy-outs, bolt-ons and exits for financial sponsors</span><span class="n">Private equity</span></li>
+          <li><span>Carve-outs and divisional sales</span><span class="n">Private M&amp;A</span></li>
+          <li><span>Consortium deals and joint ventures</span><span class="n">Private M&amp;A</span></li>
+          <li><span>Equity capital markets and listings</span><span class="n">ECM</span></li>
+          <li><span>Distressed M&amp;A</span><span class="n">With Restructuring</span></li>
+          <li><span>Cross-border transactions with our relationship firms</span><span class="n">International</span></li>
+        </ul>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Editor</span>Replaces the four overview paragraphs. Each line can link to a filtered list of deals or a case study; editors choose the lines and their order.</p>
+      </section>
+
+      <!-- Dated statistics (R11) -->
+      <section aria-labelledby="numbers">
+        <h2 class="visually-hidden" id="numbers">In numbers</h2>
+        <div class="statistics">
+          <div class="stat-item dated"><span class="stat-value">&gt;£20bn</span><span class="stat-title">Value of M&amp;A deals advised on in the last 24 months</span><span class="stat-description">The majority with a cross-border element.</span><span class="stat-source">As at 30 June 2026 · Travers Smith deal records</span></div>
+          <div class="stat-item dated"><span class="stat-value">&gt;500</span><span class="stat-title">M&amp;A transactions in the last 10 years</span><span class="stat-description">The majority cross-border.</span><span class="stat-source">As at 30 June 2026 · Travers Smith deal records</span></div>
+          <div class="stat-item dated"><span class="stat-value">Band 1</span><span class="stat-title">Chambers and Partners, M&amp;A</span><span class="stat-description">Ranked for Corporate M&amp;A in the UK guide.</span><span class="stat-source">Chambers UK 2026 guide</span></div>
+        </div>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>The live page gives no as-at date or edition year. We've shown 30 June 2026 (the firm's year end) and the 2026 guide for illustration. Who owns these figures, and how often should they be refreshed?</p>
+      </section>
+
+      <!-- Case studies (R10) -->
+      <section aria-labelledby="cases">
+        <div class="section-head"><h2 id="cases">Our work in practice</h2><a href="#">All case studies</a></div>
+        <div class="tabs" role="tablist" aria-label="Case studies">
+          <button class="tab active" data-tab="cs1" aria-selected="true">Pan-European carve-out</button>
+          <button class="tab" data-tab="cs2" aria-selected="false">Recommended takeover</button>
+          <button class="tab" data-tab="cs3" aria-selected="false">Secondary buy-out</button>
+        </div>
+        <div>
+          <div class="tab-panel active" id="cs1">
+            <div class="case-grid">
+              <div class="wf-placeholder ratio-16-9">Case study image or illustration</div>
+              <div class="cs-block">
+                <p class="eyebrow">Case study <span class="sample-tag">Sample</span></p>
+                <h3>Separating a UK-listed industrial group's European division</h3>
+                <div class="case-facts"><div><b>11</b><span>jurisdictions</span></div><div><b>1</b><span>engagement letter</span></div><div><b>7</b><span>practices involved</span></div></div>
+                <h4>The challenge</h4><p>A FTSE 250 group wanted to sell a division with operating companies across Europe, on a timetable set by its half-year results.</p>
+                <h4>What we did</h4><p>We ran the separation and sale from London, coordinating our relationship firms in each jurisdiction under a single engagement letter and fee arrangement, with Tax, Employment, Pensions and Competition in the core team.</p>
+                <h4>The outcome</h4><p>Signed and announced alongside the results, with completion three months later.</p>
+                <a href="#">Read the full case study</a>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="cs2">
+            <div class="case-grid">
+              <div class="wf-placeholder ratio-16-9">Case study image or illustration</div>
+              <div class="cs-block">
+                <p class="eyebrow">Case study <span class="sample-tag">Sample</span></p>
+                <h3>A recommended cash offer for an AIM-quoted software company</h3>
+                <div class="case-facts"><div><b>Rule 2.7</b><span>announcement</span></div><div><b>Scheme</b><span>of arrangement</span></div><div><b>5</b><span>practices involved</span></div></div>
+                <h4>The challenge</h4><p>A sponsor-backed bidder needed certainty of funds and a deal structure the target board could recommend.</p>
+                <h4>What we did</h4><p>We advised on the approach, the offer terms and the scheme of arrangement, and on the management arrangements under the Takeover Code.</p>
+                <h4>The outcome</h4><p>Unanimously recommended, approved by shareholders and sanctioned by the court.</p>
+                <a href="#">Read the full case study</a>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" id="cs3">
+            <div class="case-grid">
+              <div class="wf-placeholder ratio-16-9">Case study image or illustration</div>
+              <div class="cs-block">
+                <p class="eyebrow">Case study <span class="sample-tag">Sample</span></p>
+                <h3>A secondary buy-out with management reinvesting</h3>
+                <div class="case-facts"><div><b>2</b><span>sponsors</span></div><div><b>40+</b><span>managers reinvesting</span></div><div><b>6</b><span>practices involved</span></div></div>
+                <h4>The challenge</h4><p>The outgoing sponsor, the incoming sponsor and a large management team all needed terms they could sign up to, in one process.</p>
+                <h4>What we did</h4><p>We acted for the seller and management, covering the sale, the reinvestment and the new incentive plan.</p>
+                <h4>The outcome</h4><p>Completed on schedule, with every senior manager rolling over.</p>
+                <a href="#">Read the full case study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="wf-note query" data-note="4"><span class="wf-note-label">Open question</span>Can case studies name clients (with approval), or should they be anonymised as here? Named case studies are more convincing but take longer to sign off.</p>
+      </section>
+
+      <!-- Deal feed, deals only (R13) -->
+      <section aria-labelledby="deals-h" id="deals">
+        <div class="section-head"><h2 id="deals-h">Recent deals</h2><span class="wf-meta" data-count-for="deal-list"></span></div>
+        <div class="chips" data-filter-group data-target="deal-list">
+          <span class="lbl">Show</span>
+          <button type="button" class="chip" data-filter="all">All</button>
+          <button type="button" class="chip" data-filter="public">Public M&amp;A</button>
+          <button type="button" class="chip" data-filter="private">Private M&amp;A</button>
+          <button type="button" class="chip" data-filter="pe">Private equity</button>
+        </div>
+        <ul class="clean deal-list" id="deal-list">
+          <li data-tags="pe private"><span class="d">24 Sep 2026</span><a href="#">Phoenix Equity Partners, the founders and other sellers on the sale of Logiq to IBM</a><span class="badge">Private equity</span></li>
+          <li data-tags="private"><span class="d">24 Sep 2026</span><a href="#">Deepki on its acquisitions of EVORA Global and Metry</a><span class="badge">Private M&amp;A</span></li>
+          <li data-tags="public"><span class="d">27 Aug 2026</span><a href="#">Peel Group on its cash offer for Harworth Group plc</a><span class="badge">Public M&amp;A</span></li>
+          <li data-tags="private"><span class="d">10 Aug 2026</span><a href="#">DP World on the transfer of six UK grocery sites</a><span class="badge">Private M&amp;A</span></li>
+          <li data-tags="public"><span class="d">7 Aug 2026</span><a href="#">TruFin plc on its return of capital following the Playstack sale</a><span class="badge">Public M&amp;A</span></li>
+          <li data-tags="pe private"><span class="d">20 Jul 2026</span><a href="#">IK Partners on the sale of Forthglade</a><span class="badge">Private equity</span></li>
+          <li data-tags="public"><span class="d">16 Jul 2026</span><a href="#">Volex plc on its acquisition of the remaining stake in Kepler SignalTek</a><span class="badge">Public M&amp;A</span></li>
+          <li data-tags="private"><span class="d">19 Jun 2026</span><a href="#">Peel Group on the sale of APCL Group</a><span class="badge">Private M&amp;A</span></li>
+          <li class="panel surface" data-empty hidden>No deals of this type in the last six months.</li>
+        </ul>
+        <p class="wf-note" data-note="5"><span class="wf-note-label">Behaviour</span>The feed is driven from the Deal content type only, so firm news such as promotions no longer appears here. Every date shows its year. Deal type is set when the press release is published.</p>
+      </section>
+
+      <!-- Directory quotes with year (R11) -->
+      <section aria-labelledby="said">
+        <div class="section-head"><h2 id="said">What clients say</h2></div>
+        <div class="carousel" aria-roledescription="carousel" aria-label="Directory quotes">
+          <div class="carousel-track">
+            <div class="carousel-item quote-slide"><blockquote>"The really winning attribute enjoyed by this Travers Smith team is a clarity of communication, and clear advice in relation to key decision-making."</blockquote><cite>Legal 500 UK, 2026</cite></div>
+            <div class="carousel-item quote-slide"><blockquote>"Travers Smith is smart, practical and provides a high level of service. Complexity is where the team thrives."</blockquote><cite>Chambers UK, 2026</cite></div>
+            <div class="carousel-item quote-slide"><blockquote>"A good blend of technical and commercial advice."</blockquote><cite>Legal 500 UK, 2026</cite></div>
+            <div class="carousel-item quote-slide"><blockquote>"They translated and filtered legal complexities into simple messages to allow for fast and easy decision making under the pressure of a deal."</blockquote><cite>Chambers UK, 2026</cite></div>
+          </div>
+          <div class="carousel-controls"><button type="button" class="carousel-arrow" data-dir="prev" aria-label="Previous quote">&#8249;</button><button type="button" class="carousel-arrow" data-dir="next" aria-label="Next quote">&#8250;</button></div>
+          <div class="carousel-indicators"></div>
+        </div>
+        <p class="wf-note query" data-note="6"><span class="wf-note-label">Open question</span>Quotes are from the live page. Their edition years aren't shown there, so 2026 is illustrative. Older quotes would drop off automatically after two editions.</p>
+      </section>
+
+      <!-- Key contacts, then the team (R14) -->
+      <section aria-labelledby="contacts">
+        <div class="section-head"><h2 id="contacts">Key contacts</h2></div>
+        <div class="people-grid">
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Andrew Gillen</a></h3><p class="muted">Senior Partner</p><p>+44 20 7295 3369</p><p><a href="#">Email Andrew</a></p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Aaron Stocks</a></h3><p class="muted">Head of Transactions</p><p>+44 20 7295 3319</p><p><a href="#">Email Aaron</a></p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Adrian West</a></h3><p class="muted">Head of Corporate M&amp;A and ECM</p><p>+44 20 7295 3419</p><p><a href="#">Email Adrian</a></p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Will Yates</a></h3><p class="muted">Head of Private Equity &amp; Financial Sponsors</p><p>+44 20 7295 3460</p><p><a href="#">Email Will</a></p></div></div>
+        </div>
+        <p style="margin-top:1rem"><button type="button" class="btn btn-secondary" data-reveal="team-all" data-open-label="Hide the team">Meet the whole team (16 partners)</button></p>
+        <div id="team-all" hidden>
+          <ul class="clean team-list">
+            <li>Victoria Bramall <span>Partner</span></li>
+            <li>Tom Coulter <span>Partner</span></li>
+            <li>Jaryd Davidson <span>Partner</span></li>
+            <li>Jeremy Dennison <span>Partner</span></li>
+            <li>Alex Dixon <span>Partner</span></li>
+            <li>Tom Hartwright <span>Partner</span></li>
+            <li><a href="~/pages/profile.html">Emma Havas</a> <span>Partner</span></li>
+            <li>William Howard <span>Head of International</span></li>
+            <li>Hugh Hutchison <span>Partner</span></li>
+            <li>Laura Kelly <span>Partner</span></li>
+            <li>Ben Lowen <span>Partner</span></li>
+            <li>Adam Orr <span>Partner</span></li>
+            <li>Jon Reddington <span>Partner</span></li>
+            <li>Mohammed Senouci <span>Partner</span></li>
+            <li>Ella Sharpley <span>Partner</span></li>
+            <li>Jonathan Walters <span>Partner</span></li>
+          </ul>
+        </div>
+        <p class="wf-note" data-note="7"><span class="wf-note-label">Behaviour</span>Four key contacts are chosen by the practice. The full list opens in place and links to each profile (Emma Havas opens prototype 2).</p>
+      </section>
+
+      <!-- Send the practice a brief (R15) -->
+      <section aria-labelledby="enquire-h" id="enquire">
+        <div class="enquiry-panel panel surface">
+          <div>
+            <h2 id="enquire-h">Tell us about your matter</h2>
+            <p>If you're not sure who to call, send the Corporate M&amp;A team a short note. It goes to the practice's business development lead, who will put you in touch with the right partner.</p>
+            <ol class="what-next">
+              <li><span>We check for conflicts before discussing any detail.</span></li>
+              <li><span>A partner contacts you, usually within one working day.</span></li>
+              <li><span>Nothing you send here creates a client relationship until we confirm it in writing.</span></li>
+            </ol>
+          </div>
+          <div>
+            <form id="svc-form" data-validate data-done="svc-done">
+              <p class="wf-meta">Practice: <strong>Corporate M&amp;A</strong></p>
+              <div class="form-grid">
+                <div class="field"><label for="svc-name">Your name</label><input type="text" id="svc-name" autocomplete="name" required><p class="field-error" hidden>Enter your name</p></div>
+                <div class="field"><label for="svc-org">Organisation</label><input type="text" id="svc-org" autocomplete="organization" required><p class="field-error" hidden>Enter your organisation</p></div>
+                <div class="field"><label for="svc-email">Work email</label><input type="email" id="svc-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+                <div class="field"><label for="svc-type">Kind of matter</label>
+                  <select id="svc-type" required><option value="">Choose one</option><option>Public takeover</option><option>Private acquisition or disposal</option><option>Private equity transaction</option><option>Joint venture</option><option>Listing or equity raise</option><option>Something else</option></select>
+                  <p class="field-error" hidden>Choose the kind of matter</p></div>
+                <div class="field full"><label for="svc-msg">A line or two about what you need <span class="muted">(no confidential details yet)</span></label><textarea id="svc-msg" rows="3" required></textarea><p class="field-error" hidden>Add a short description</p></div>
+              </div>
+              <button type="submit" class="btn">Send to the Corporate M&amp;A team</button>
+              <p class="field-hint">We use your details only to respond. <a href="#">Privacy notice</a></p>
+            </form>
+            <div id="svc-done" class="confirm-box" hidden>
+              <div class="tick" aria-hidden="true">&#10003;</div>
+              <h3>Thanks, <span data-echo="svc-name"></span></h3>
+              <p>Your note has gone to the Corporate M&amp;A team. A partner will be in touch at <strong data-echo="svc-email"></strong>, usually within one working day.</p>
+            </div>
+          </div>
+        </div>
+        <p class="wf-note query" data-note="8"><span class="wf-note-label">Open question</span>Who should practice enquiries go to: a named BD lead, a shared inbox, or the CRM? And is one working day a promise the firm is happy to make?</p>
+      </section>
+
+      <!-- Related knowledge -->
+      <section aria-labelledby="know">
+        <div class="section-head"><h2 id="know">Latest thinking</h2><a href="~/pages/briefing.html">See a briefing page (prototype 3)</a></div>
+        <ul class="clean content-list">
+          <li><span class="wf-meta">Legal briefing · 7 Aug 2026</span><h3><a href="#">New (and improved) AIM rules</a></h3></li>
+          <li><span class="wf-meta">Article · 15 Jul 2026</span><h3><a href="#">Annual Report on Technology &amp; Innovation in M&amp;A</a></h3></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include follow-modal.html -->
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

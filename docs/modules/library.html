@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module library | Travers Smith prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces the Travers Smith header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Travers Smith prototypes, overview">Travers Smith <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/service.html" data-proto="service"><span class="n">1</span> Service page</a></li>
+          <li><a href="../pages/profile.html" data-proto="profile"><span class="n">2</span> Profiles</a></li>
+          <li><a href="../pages/briefing.html" data-proto="briefing topic-hub"><span class="n">3</span> Briefings</a></li>
+          <li><a href="../pages/events.html" data-proto="events event"><span class="n">4</span> Events</a></li>
+          <li><a href="../pages/stay-in-touch.html" data-proto="stay-in-touch contact"><span class="n">5</span> Stay in touch</a></li>
+          <li><a href="../pages/international.html" data-proto="international region"><span class="n">6</span> International</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <h1>Module library</h1>
+      <p class="lead">The new components used across the six prototypes, each shown once, with the requirement it serves.</p>
+
+      <!-- Dated statistic (R11) -->
+      <section><h2 class="section-title">Dated statistic <span class="wf-req">R11</span></h2>
+        <div class="statistics" style="max-width:360px"><div class="stat-item dated"><span class="stat-value">&gt;500</span><span class="stat-title">M&amp;A transactions in the last 10 years</span><span class="stat-source">As at 30 June 2026 · Travers Smith deal records</span></div></div>
+      </section>
+
+      <!-- Deal list item (R13, R20) -->
+      <section><h2 class="section-title">Deal list <span class="wf-req">R13 R20</span></h2>
+        <ul class="clean deal-list"><li><span class="d">24 Sep 2026</span><a href="#">Phoenix Equity Partners on the sale of Logiq to IBM</a><span class="badge">Private equity</span></li></ul>
+      </section>
+
+      <!-- Person card (R14) -->
+      <section><h2 class="section-title">Person card <span class="wf-req">R14</span></h2>
+        <div class="people-grid"><div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Adrian West</a></h3><p class="muted">Head of Corporate M&amp;A and ECM</p><p>+44 20 7295 3419</p><p><a href="#">Email Adrian</a></p></div></div></div>
+      </section>
+
+      <!-- Follow button (R40) -->
+      <section><h2 class="section-title">Follow a topic <span class="wf-req">R40</span></h2>
+        <button type="button" class="btn follow-btn" data-follow="Tax"><span class="follow-label">Follow Tax</span></button>
+      </section>
+
+      <!-- Key points (R31) -->
+      <section><h2 class="section-title">Key points box <span class="wf-req">R31</span></h2>
+        <div class="key-points" style="max-width:72ch"><h2>Key points</h2><ul><li>Three to five points, written by the author.</li><li>Plain sentences, each one standing on its own.</li></ul><p class="todo"><strong>What to do now:</strong> one line of practical advice.</p></div>
+      </section>
+
+      <!-- Event card (R50, R53) -->
+      <section><h2 class="section-title">Event card with add to calendar <span class="wf-req">R50 R53</span></h2>
+        <ul class="event-list" data-next-events="1" data-base="~/pages/"></ul>
+      </section>
+
+      <!-- Topic card and reason card (R60, R64) -->
+      <section><h2 class="section-title">Choice cards <span class="wf-req">R60 R64</span></h2>
+        <div class="grid grid-2">
+          <label class="topic-card"><input type="checkbox"><span><strong>What's Happening in Pensions</strong><span>Our regular round-up for trustees and sponsors</span></span></label>
+          <label class="reason-card"><input type="radio" name="lib-r"><span><strong>A new legal matter</strong><span>We'll route it to the right practice</span></span></label>
+        </div>
+      </section>
+
+      <!-- What happens next (R67) -->
+      <section><h2 class="section-title">What happens next <span class="wf-req">R67</span></h2>
+        <ol class="what-next" style="max-width:480px"><li><span>Your message goes to the team that handles it.</span></li><li><span>We reply within the time shown.</span></li></ol>
+      </section>
+
+      <!-- Region tile (R70) -->
+      <section><h2 class="section-title">Region tile <span class="wf-req">R70</span></h2>
+        <div class="region-tiles" style="max-width:300px"><a class="region-tile" href="../pages/region.html?r=europe" data-region-tile="europe"><span class="wf-placeholder">Map: Europe</span><h3>Europe</h3><p><span data-rt="countries"></span> countries · <span data-rt="firms"></span> firms</p></a></div>
+      </section>
+
+      <!-- Sample marker -->
+      <section><h2 class="section-title">Sample marker</h2>
+        <p>Content written for the prototype carries a <span class="sample-tag">Sample</span> tag; unknown facts are shown as <span class="ph-text">[placeholders]</span>.</p>
+      </section>
+    </div>
+  </main>
+  <!-- Follow modal, shared across prototypes -->
+  <div class="wf-modal" id="follow-modal" role="dialog" aria-modal="true" aria-labelledby="follow-title">
+    <div class="wf-modal-panel">
+      <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+      <h2 id="follow-title">Follow <span data-follow-topic></span></h2>
+      <p>We'll email you new briefings, events and podcasts on this topic. You can change topics or unsubscribe at any time.</p>
+      <form id="follow-form" data-validate>
+        <div class="field"><label for="follow-email">Work email</label><input type="email" id="follow-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+        <button type="submit" class="btn">Follow</button>
+        <p class="field-hint">Want more than one topic? <a href="../pages/stay-in-touch.html">Choose all your topics</a></p>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Prototype pager (replaces the Travers Smith footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Greyscale, structure only · Sample content is marked in the notes</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

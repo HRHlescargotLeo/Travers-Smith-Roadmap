@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay in touch | Travers Smith prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces the Travers Smith header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Travers Smith prototypes, overview">Travers Smith <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/service.html" data-proto="service"><span class="n">1</span> Service page</a></li>
+          <li><a href="../pages/profile.html" data-proto="profile"><span class="n">2</span> Profiles</a></li>
+          <li><a href="../pages/briefing.html" data-proto="briefing topic-hub"><span class="n">3</span> Briefings</a></li>
+          <li><a href="../pages/events.html" data-proto="events event"><span class="n">4</span> Events</a></li>
+          <li><a href="../pages/stay-in-touch.html" data-proto="stay-in-touch contact"><span class="n">5</span> Stay in touch</a></li>
+          <li><a href="../pages/international.html" data-proto="international region"><span class="n">6</span> International</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 6 · Sign-up, with the <a href="../pages/contact.html">contact form</a> alongside</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Sign-up starts with what the reader wants to hear about: the firm's named series, practice areas and events. Only then does it ask for a name and email, with organisation and job title optional and no "How did you hear about us?". Readers choose between getting things as they are published or a weekly digest.</p></div>
+          <div><h2>Why</h2><p>The live form asks for six required fields, including how you heard about the firm, and only offers topics "once you have submitted your details". Someone who wants the pensions newsletter has to hand over their job title before they can say so. Topics followed from a briefing or service page arrive here already ticked.</p></div>
+        </div>
+        <p class="proposal-foot">Series names are from the firm's Knowledge pages. Ideas 25, 26 and 29.</p>
+      </div>
+    </aside>
+
+    <div class="page-hero">
+      <div class="container">
+        <h1>Stay in touch</h1>
+        <p class="lead">Choose what you'd like to hear about. You can change your topics or unsubscribe at any time.</p>
+      </div>
+    </div>
+
+    <div class="container" id="signup">
+      <ol class="steps" aria-label="Progress"><li class="current">Choose topics</li><li>Your details</li></ol>
+
+      <!-- Step 1: topics (R60) -->
+      <div id="su-step1">
+        <div class="topic-groups">
+          <fieldset>
+            <legend>Newsletters and series</legend>
+            <div class="topic-grid">
+            <label class="topic-card"><input type="checkbox" name="topic" value="What's Happening in Pensions"><span><strong>What's Happening in Pensions</strong><span>Our regular round-up for trustees and sponsors</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="In the Pipeline"><span><strong>In the Pipeline</strong><span>Monthly, as published</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Employment Update"><span><strong>Employment Update</strong><span>Monthly, as published</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Financial Services postcards"><span><strong>Financial Services postcards</strong><span>Seasonal round-ups for financial services clients</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Alternative Insights"><span><strong>Alternative Insights</strong><span>For the alternative asset management industry</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Sustainability Insights"><span><strong>Sustainability Insights</strong><span>ESG and sustainability developments</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Budget Tracker"><span><strong>Budget Tracker</strong><span>What the Budget means, as it happens</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Frontline"><span><strong>Frontline</strong><span>Our Defence, Security &amp; Resilience series</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Practice areas</legend>
+            <div class="topic-grid">
+            <label class="topic-card"><input type="checkbox" name="topic" value="Corporate M&amp;A"><span><strong>Corporate M&amp;A</strong><span>Deals, takeovers and ECM</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Private Equity"><span><strong>Private Equity</strong><span>Sponsors, portfolio companies and management teams</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Funds"><span><strong>Funds</strong><span>Fund formation, secondaries and regulation</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Pensions"><span><strong>Pensions</strong><span>Schemes, trustees and sponsors</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Employment"><span><strong>Employment</strong><span>Workforce law and HR</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Tax"><span><strong>Tax</strong><span>Corporate, funds and employment tax</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Financial Services &amp; Markets"><span><strong>Financial Services &amp; Markets</strong><span>Regulation, fintech and payments</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Real Estate"><span><strong>Real Estate</strong><span>Investment, development and planning</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Disputes"><span><strong>Disputes</strong><span>Litigation, arbitration and investigations</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Competition"><span><strong>Competition</strong><span>Merger control and enforcement</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="Data Protection"><span><strong>Data Protection</strong><span>Privacy, cyber and AI regulation</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="ESG and Impact"><span><strong>ESG and Impact</strong><span>Sustainability law and reporting</span></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Events and training</legend>
+            <div class="topic-grid">
+            <label class="topic-card"><input type="checkbox" name="topic" value="Event invitations"><span><strong>Event invitations</strong><span>Webinars, breakfasts and conferences</span></span></label>
+            <label class="topic-card"><input type="checkbox" name="topic" value="GC Programme"><span><strong>GC Programme</strong><span>Training for in-house lawyers</span></span></label>
+            </div>
+          </fieldset>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Topics followed elsewhere in these prototypes (try "Follow Pensions" on the briefing) arrive here already ticked. Opening this page from a link with <code>?topic=</code> ticks that topic too.</p>
+        <div class="sticky-bar">
+          <span data-topic-count aria-live="polite"></span>
+          <p class="field-error" id="su-topic-error" hidden>Choose at least one topic to continue</p>
+          <button type="button" class="btn" id="su-next">Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 2: details (R61) -->
+      <div id="su-step2" hidden>
+        <form id="su-form" data-validate data-done="su-done" data-hide=".steps-extra">
+          <p><span data-topic-count></span>. <button type="button" class="btn-link" id="su-back">Change topics</button></p>
+          <div class="form-grid">
+            <div class="field"><label for="su-first">First name</label><input type="text" id="su-first" autocomplete="given-name" required><p class="field-error" hidden>Enter your first name</p></div>
+            <div class="field"><label for="su-last">Last name</label><input type="text" id="su-last" autocomplete="family-name" required><p class="field-error" hidden>Enter your last name</p></div>
+            <div class="field full"><label for="su-email">Work email</label><input type="email" id="su-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+            <div class="field"><label for="su-org">Organisation <span class="muted">(optional)</span></label><input type="text" id="su-org" autocomplete="organization"></div>
+            <div class="field"><label for="su-role">Job title <span class="muted">(optional)</span></label><input type="text" id="su-role" autocomplete="organization-title"></div>
+          </div>
+          <fieldset>
+            <legend>How often?</legend>
+            <div class="stack">
+              <label class="check"><input type="radio" name="freq" value="As they are published" checked> As they are published</label>
+              <label class="check"><input type="radio" name="freq" value="A weekly digest, on Fridays"> A weekly digest, on Fridays</label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn">Sign up</button>
+          <p class="field-hint">We'll send a link to confirm your email address. <a href="#">Privacy notice</a></p>
+        </form>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Does the firm use organisation and job title to qualify contacts in the CRM? If so, we could ask for them after the first email rather than at sign-up.</p>
+      </div>
+
+      <div id="su-done" class="confirm-box" hidden>
+        <div class="tick" aria-hidden="true">&#10003;</div>
+        <h2>Nearly done, <span data-echo="su-first"></span></h2>
+        <p>Check <strong data-echo="su-email"></strong> for a link to confirm your address. You'll then receive:</p>
+        <ul class="clean stack" id="su-done-topics" style="max-width:420px;margin:0 auto 1rem"></ul>
+        <p>How often: <strong id="su-done-freq"></strong></p>
+        <p><a href="../pages/briefing.html">Back to the briefing</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the Travers Smith footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Greyscale, structure only · Sample content is marked in the notes</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+  <!-- Follow modal, shared across prototypes -->
+  <div class="wf-modal" id="follow-modal" role="dialog" aria-modal="true" aria-labelledby="follow-title">
+    <div class="wf-modal-panel">
+      <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+      <h2 id="follow-title">Follow <span data-follow-topic></span></h2>
+      <p>We'll email you new briefings, events and podcasts on this topic. You can change topics or unsubscribe at any time.</p>
+      <form id="follow-form" data-validate>
+        <div class="field"><label for="follow-email">Work email</label><input type="email" id="follow-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+        <button type="submit" class="btn">Follow</button>
+        <p class="field-hint">Want more than one topic? <a href="~/pages/stay-in-touch.html">Choose all your topics</a></p>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Region | International | Travers Smith prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 6 of 6 · Regional page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One page per region answering the questions a client actually asks: do you cover this country, what have you done there recently, and who do I call? The same template serves all four regions, and the region can be switched without leaving the page.</p></div>
+          <div><h2>Why</h2><p>The International page currently says the firm works in over 50 countries without saying which ones. A regional page makes the relationship-firm model concrete, and gives BD somewhere to send a client who asks about a specific market.</p></div>
+        </div>
+        <p class="proposal-foot">All regional content is sample content written for discussion, apart from matters without a Sample tag, which come from the firm's press releases. Idea 30.</p>
+      </div>
+    </aside>
+
+    <div id="region">
+      <div class="page-hero">
+        <div class="container">
+          <p class="breadcrumb-lite"><a href="~/pages/international.html">International</a> › <span data-rg="name"></span></p>
+          <nav class="region-switch" aria-label="Regions">
+            <a href="~/pages/region.html?r=europe" data-region="europe">Europe</a>
+            <a href="~/pages/region.html?r=americas" data-region="americas">Americas</a>
+            <a href="~/pages/region.html?r=apac" data-region="apac">Asia Pacific</a>
+            <a href="~/pages/region.html?r=mea" data-region="mea">Middle East and Africa</a>
+          </nav>
+          <h1 data-rg="name">Europe</h1>
+          <p class="lead" data-rg="intro"></p>
+          <div class="row hero-actions"><a class="btn" href="~/pages/contact.html?practice=unsure">Discuss a cross-border matter</a></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <section aria-labelledby="rg-num">
+          <h2 class="visually-hidden" id="rg-num">In numbers</h2>
+          <div class="statistics">
+            <div class="stat-item dated"><span class="stat-value" data-rg="countries"></span><span class="stat-title">countries we worked in last year</span><span class="stat-source">Year to 30 June 2026 · Sample figure</span></div>
+            <div class="stat-item dated"><span class="stat-value" data-rg="firms"></span><span class="stat-title">independent firms we worked with</span><span class="stat-source">Year to 30 June 2026 · Sample figure</span></div>
+          </div>
+        </section>
+
+        <section aria-labelledby="rg-work">
+          <div class="section-head"><h2 id="rg-work">Recent matters</h2></div>
+          <ul class="card-grid" id="rg-matters"></ul>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Editor</span>Matters are pulled from deals and case studies tagged with a jurisdiction in the region; editors can pin up to three.</p>
+        </section>
+
+        <section aria-labelledby="rg-j">
+          <div class="section-head"><h2 id="rg-j">Jurisdictions we cover regularly</h2></div>
+          <ul class="juris-list" id="rg-jurisdictions"></ul>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Can the firm name the independent firms it works with in each country, or would the relationships prefer to stay unnamed? Naming them is more convincing but may need each firm's agreement.</p>
+        </section>
+
+        <section aria-labelledby="rg-people">
+          <div class="section-head"><h2 id="rg-people">Who to call</h2></div>
+          <div class="people-grid">
+            <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">William Howard</a></h3><p class="muted">Head of International</p><p>+44 20 7295 3483</p></div></div>
+            <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3 class="ph-text">[Regional lead]</h3><p class="muted">International Board</p></div></div>
+          </div>
+          <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Does the International Board divide the world by region? If so, each regional page would show its own lead alongside William Howard.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

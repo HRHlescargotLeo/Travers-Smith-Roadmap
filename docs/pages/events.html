@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training and events | Travers Smith prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces the Travers Smith header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Travers Smith prototypes, overview">Travers Smith <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/service.html" data-proto="service"><span class="n">1</span> Service page</a></li>
+          <li><a href="../pages/profile.html" data-proto="profile"><span class="n">2</span> Profiles</a></li>
+          <li><a href="../pages/briefing.html" data-proto="briefing topic-hub"><span class="n">3</span> Briefings</a></li>
+          <li><a href="../pages/events.html" data-proto="events event"><span class="n">4</span> Events</a></li>
+          <li><a href="../pages/stay-in-touch.html" data-proto="stay-in-touch contact"><span class="n">5</span> Stay in touch</a></li>
+          <li><a href="../pages/international.html" data-proto="international region"><span class="n">6</span> International</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 6 · Events listing and event page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Upcoming events first, with on-demand and past events on their own tabs. Every card gives the full date with the year, the time with its time zone, how long it lasts, the format and an add-to-calendar option. Past events link to a recording or the takeaways where there is one. The event page puts the essentials at the top and replaces the embedded registration frame with a short form in the site's own style.</p></div>
+          <div><h2>Why</h2><p>On 29 September the live Events page mixes 36 past and future results, holds one item under "Future events", and still promotes "ESG Academy 2024". The homepage's "Latest events" shows three past events while the 14 October Ukraine defence webinar goes unmentioned. Anyone planning their diary has to work out which events are still to come.</p></div>
+        </div>
+        <p class="proposal-foot">The Ukraine webinar and past events are real; other upcoming events are samples. Ideas 19–23.</p>
+      </div>
+    </aside>
+
+    <div class="page-hero">
+      <div class="container">
+        <p class="breadcrumb-lite">Knowledge › Training and events</p>
+        <h1>Training and events</h1>
+        <p class="lead">Webinars, briefings and conferences for clients and in-house teams. Most are free and carry CPD.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Programme promotion, with an end date (R52) -->
+      <div class="panel surface row between" style="margin-bottom:2rem">
+        <div><p class="eyebrow">GC Programme 2026–27</p><p style="margin:0">Our training programme for general counsel and in-house lawyers. Sessions from November.</p></div>
+        <a class="btn btn-secondary" href="#">See the programme</a>
+      </div>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Editor</span>Promotions carry an end date and disappear automatically, so an "ESG Academy 2024" banner can't outlive its year. This one is a sample.</p>
+
+      <!-- Upcoming / on demand / past (R50) -->
+      <div class="tabs view-tabs" role="tablist" aria-label="Which events">
+        <button type="button" class="tab active" data-when="upcoming" aria-selected="true">Upcoming</button>
+        <button type="button" class="tab" data-when="ondemand" aria-selected="false">On demand</button>
+        <button type="button" class="tab" data-when="past" aria-selected="false">Past events</button>
+      </div>
+      <div class="chips" role="group" aria-label="Format">
+        <span class="lbl">Format</span>
+        <button type="button" class="chip" data-format="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-format="webinar" aria-pressed="false">Webinar</button>
+        <button type="button" class="chip" data-format="in-person" aria-pressed="false">In person</button>
+        <button type="button" class="chip" data-format="conference" aria-pressed="false">Conference</button>
+        <span class="wf-meta" id="event-count" aria-live="polite"></span>
+      </div>
+      <ul class="event-list" id="event-list" data-base="~/pages/"></ul>
+      <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Events move from Upcoming to Past automatically at their end time. "Add to calendar" gives an .ics file for Outlook and Apple, or opens Google Calendar. Times show BST or GMT depending on the date.</p>
+      <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Do recordings or slides exist for most past events? If not, a short write-up of the takeaways is the cheaper option, and doubles as a knowledge article.</p>
+
+      <!-- Homepage module (R51) -->
+      <section aria-labelledby="home-mod" style="margin-top:3rem">
+        <div class="section-head"><h2 id="home-mod">Homepage module: upcoming events</h2><span class="wf-meta">Shown here for review</span></div>
+        <ul class="event-list" data-next-events="3" data-base="~/pages/"></ul>
+        <p class="wf-note" data-note="4"><span class="wf-note-label">Behaviour</span>Replaces "Latest events" on the homepage. It shows the next three upcoming events, and only falls back to "Recent events" when nothing is scheduled.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces the Travers Smith footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Greyscale, structure only · Sample content is marked in the notes</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

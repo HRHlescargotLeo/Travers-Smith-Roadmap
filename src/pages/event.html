@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event | Travers Smith prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 6 · Event page</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The essentials in one panel at the top: date, time and time zone, duration, format, where, CPD and an add-to-calendar option. Registration is a short form on the page itself, with a confirmation that says what happens next and offers the calendar file straight away.</p></div>
+          <div><h2>Why</h2><p>The live webinar page gives "03:00 PM UK time" and nothing about duration or platform. Registration sits in an 800px frame from the marketing platform, with a square navy button unlike the rest of the site and a stretch of empty space below it.</p></div>
+        </div>
+        <p class="proposal-foot">Opens the Ukraine webinar by default; other events open from the listing. Ideas 22 and 23.</p>
+      </div>
+    </aside>
+
+    <div id="event-page">
+      <div class="page-hero">
+        <div class="container">
+          <p class="breadcrumb-lite"><a href="~/pages/events.html">Training and events</a> › <span data-ev="format"></span></p>
+          <p class="eyebrow"><span data-ev="format"></span> · <span data-ev="topic"></span> <span class="sample-tag" id="ev-sample" hidden>Sample</span></p>
+          <h1 data-ev="title">Event</h1>
+          <p class="lead" data-ev="summary"></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="split">
+          <div>
+            <!-- Registration (R54) -->
+            <section aria-labelledby="reg-h">
+              <h2 id="reg-h">Register</h2>
+              <form id="reg-form" data-validate data-done="reg-done">
+                <div class="form-grid">
+                  <div class="field"><label for="reg-first">First name</label><input type="text" id="reg-first" autocomplete="given-name" required><p class="field-error" hidden>Enter your first name</p></div>
+                  <div class="field"><label for="reg-last">Last name</label><input type="text" id="reg-last" autocomplete="family-name" required><p class="field-error" hidden>Enter your last name</p></div>
+                  <div class="field"><label for="reg-email">Work email</label><input type="email" id="reg-email" autocomplete="email" required><p class="field-error" hidden>Enter an email address like name@company.com</p></div>
+                  <div class="field"><label for="reg-org">Organisation</label><input type="text" id="reg-org" autocomplete="organization" required><p class="field-error" hidden>Enter your organisation</p></div>
+                  <div class="field full"><label for="reg-q">A question for the speakers <span class="muted">(optional)</span></label><textarea id="reg-q" rows="2"></textarea></div>
+                </div>
+                <label class="check field"><input type="checkbox" id="reg-news"> Also send me briefings on this topic</label>
+                <button type="submit" class="btn">Register</button>
+                <p class="field-hint">We use your details to manage your place. <a href="#">Privacy notice</a></p>
+              </form>
+              <div id="reg-done" class="confirm-box" hidden>
+                <div class="tick" aria-hidden="true">&#10003;</div>
+                <h3>You're registered, <span data-echo="reg-first"></span></h3>
+                <p>A confirmation is on its way to <strong data-echo="reg-email"></strong>, and the joining details follow the day before.</p>
+                <div class="row" style="justify-content:center" data-ev="calendar"></div>
+              </div>
+              <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Four required fields, in the site's own form style. The form posts to the same marketing platform behind the scenes, so the firm's event lists and reminders keep working.</p>
+              <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Can the marketing platform accept a submission from a native form (by API), or does it need to stay embedded? That decides the effort for this idea.</p>
+            </section>
+
+            <section aria-labelledby="sp-h">
+              <h2 id="sp-h">Speakers</h2>
+              <ul class="clean" id="ev-speakers"></ul>
+            </section>
+
+            <p class="panel surface" id="ev-hub" hidden>Part of our <a href="~/pages/topic-hub.html">pensions consolidation</a> coverage.</p>
+          </div>
+
+          <!-- Essentials panel (R53) -->
+          <aside class="panel surface" aria-label="Event details">
+            <dl class="essentials">
+              <dt>Date</dt><dd data-ev="date"></dd>
+              <dt>Time</dt><dd data-ev="time"></dd>
+              <dt>Duration</dt><dd data-ev="duration"></dd>
+              <dt>Format</dt><dd data-ev="format"></dd>
+              <dt>Where</dt><dd data-ev="where"></dd>
+              <dt>CPD</dt><dd data-ev="cpd"></dd>
+            </dl>
+            <div data-ev="calendar"></div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

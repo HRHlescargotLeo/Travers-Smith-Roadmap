@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pensions consolidation | Travers Smith prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 6 · Topic hub, shown with pensions consolidation</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One template for the handful of changes clients follow for months or years. A plain summary, a timeline of what happens when, every briefing, podcast and event on the subject in one filterable list, and the people to call. The same template would serve the Budget Tracker, SFDR 2.0 or the Employment Rights Act.</p></div>
+          <div><h2>Why</h2><p>The firm already has pages like this, but each is built differently: the Budget Tracker 2026, the ESG and Impact Library and Regulatory reform. A shared template makes a new hub a morning's work for the Knowledge team rather than a project, and gives readers something to bookmark.</p></div>
+        </div>
+        <p class="proposal-foot">Timeline facts come from the live "Small Pots, Big Questions" briefing. Items marked Sample are illustrative. Idea 16.</p>
+      </div>
+    </aside>
+
+    <div class="page-hero">
+      <div class="container">
+        <p class="breadcrumb-lite">Knowledge › Topics</p>
+        <p class="eyebrow">Topic hub · Updated 28 September 2026</p>
+        <h1>Pensions consolidation</h1>
+        <p class="lead">The Government plans to move millions of small, dormant pension pots into authorised consolidator schemes automatically. Here is what is proposed, when it happens and what DC schemes, providers and employers should do now.</p>
+        <div class="row hero-actions">
+          <button type="button" class="btn follow-btn" data-follow="Pensions"><span class="follow-label">Follow Pensions</span></button>
+          <a class="btn btn-secondary" href="#hub-content">Briefings and events</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section aria-labelledby="inshort">
+        <div class="statistics">
+          <div class="stat-item dated"><span class="stat-value">13m</span><span class="stat-title">small, dormant pots today</span><span class="stat-source">Expected to reach 20 million by 2030 · Government estimate</span></div>
+          <div class="stat-item dated"><span class="stat-value">&gt;£4bn</span><span class="stat-title">held in those pots</span><span class="stat-source">Government estimate</span></div>
+          <div class="stat-item dated"><span class="stat-value">£240m</span><span class="stat-title">a year to administer them</span><span class="stat-source">Government estimate</span></div>
+        </div>
+        <h2 class="visually-hidden" id="inshort">In short</h2>
+      </section>
+
+      <!-- Timeline (R34) -->
+      <section aria-labelledby="tl">
+        <div class="section-head"><h2 id="tl">What happens when</h2></div>
+        <div class="tabs timeline" role="tablist" aria-label="Timeline">
+          <button class="tab" data-tab="t1" aria-selected="false"><span class="when">2026</span><b>Pension Schemes Act</b></button>
+          <button class="tab active" data-tab="t2" aria-selected="true"><span class="when">Now</span><b>Consultation</b></button>
+          <button class="tab" data-tab="t3" aria-selected="false"><span class="when">Next</span><b>Draft regulations</b></button>
+          <button class="tab" data-tab="t4" aria-selected="false"><span class="when">Late 2027 or early 2028</span><b>Further consultation</b></button>
+          <button class="tab" data-tab="t5" aria-selected="false"><span class="when">From 2030</span><b>Regime starts</b></button>
+        </div>
+        <div class="timeline-panels">
+          <div class="tab-panel" id="t1"><h3>The framework</h3><p>The Pension Schemes Act 2026 sets the framework for consolidating small pots. The detail follows in regulations.</p></div>
+          <div class="tab-panel active" id="t2"><h3>The Government's latest consultation</h3><p>Covers which schemes and pots are in scope, possible exclusions (guarantees, protected pension ages, Sharia-compliant funds), what members are told, authorisation of consolidators and new employer duties.</p><p><a href="~/pages/briefing.html">Read our 10 key answers</a></p></div>
+          <div class="tab-panel" id="t3"><h3>Draft regulations, TPR and FCA</h3><p>A consultation on draft regulations, with further detail through TPR Codes of Practice and FCA rules consulted on alongside.</p></div>
+          <div class="tab-panel" id="t4"><h3>The remaining detail</h3><p>A further consultation on ceding scheme duties, supervisory detail, final data standards and the rest of the framework.</p></div>
+          <div class="tab-panel" id="t5"><h3>Transfers begin</h3><p>The Government expects to implement the multiple default consolidator solution from 2030, starting between April and June, subject to a review of the digital infrastructure.</p></div>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The timeline opens on the current stage. Editors add or move stages as dates firm up; each stage can link to the briefing that covers it.</p>
+      </section>
+
+      <!-- Everything on the topic (R35) -->
+      <section aria-labelledby="hub-content-h" id="hub-content">
+        <div class="section-head"><h2 id="hub-content-h">Briefings, podcasts and events</h2><span class="wf-meta" data-count-for="hub-list"></span></div>
+        <div class="chips" data-filter-group data-target="hub-list">
+          <span class="lbl">Show</span>
+          <button type="button" class="chip" data-filter="all">All</button>
+          <button type="button" class="chip" data-filter="briefing">Briefings</button>
+          <button type="button" class="chip" data-filter="podcast">Podcasts</button>
+          <button type="button" class="chip" data-filter="event">Events</button>
+          <button type="button" class="chip" data-filter="infographic">Infographics</button>
+        </div>
+        <ul class="clean content-list" id="hub-list">
+          <li data-tags="event"><span class="wf-meta">Webinar · 19 Nov 2026 · 12:30 GMT <span class="sample-tag">Sample</span></span><h3><a href="~/pages/event.html?event=small-pots">Small pots, big questions: the consolidation regime explained</a></h3><p>Register for the Pensions team's 45-minute walkthrough.</p></li>
+          <li data-tags="briefing"><span class="wf-meta">Legal briefing · 28 Sep 2026 · 9 min read</span><h3><a href="~/pages/briefing.html">Small Pots, Big Questions: 10 key answers on the pensions consolidation regime</a></h3><p>The consultation in ten questions.</p></li>
+          <li data-tags="infographic"><span class="wf-meta">Infographic · 1 page <span class="sample-tag">Sample</span></span><h3><a href="#">The small pots timeline on one page</a></h3><p>For trustee packs.</p></li>
+          <li data-tags="briefing"><span class="wf-meta">Newsletter · Issue 124 · 7 min read</span><h3><a href="#">What's Happening in Pensions</a></h3><p>Our regular round-up for trustees and sponsors.</p></li>
+          <li data-tags="podcast"><span class="wf-meta">Podcast · 22 min <span class="sample-tag">Sample</span></span><h3><a href="#">DC consolidation and value for money: what trustees are asking us</a></h3><p>Two of the Pensions team on the questions coming up in trustee meetings.</p></li>
+          <li class="panel surface" data-empty hidden>Nothing of this type yet on this topic.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="hub-people">
+        <div class="section-head"><h2 id="hub-people">Talk to us</h2></div>
+        <div class="people-grid">
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">David James</a></h3><p class="muted">Head of Pensions</p><p>+44 20 7295 3087</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Niamh Hamlyn</a></h3><p class="muted">Partner</p><p>+44 20 7295 3287</p></div></div>
+          <div class="person-card"><span class="wf-placeholder">Photo</span><div><h3><a href="#">Catrin Young</a></h3><p class="muted">Knowledge Counsel</p><p>+44 20 7295 3876</p></div></div>
+        </div>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Which topics would the firm want as hubs first? Candidates we saw: pensions consolidation, SFDR 2.0, the Budget, the Employment Rights Act and AI regulation.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include follow-modal.html -->
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>
